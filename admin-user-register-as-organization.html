@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Tags -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no">
+  <title>Admin User Register As Organization</title>
+
+  <!-- font -->
+  <link href="css/font.css" rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+  <!-- Main CSS -->
+  <link href="css/jquery.ui.css" rel="stylesheet" />
+  <link href="css/jqtransform.css" rel="stylesheet" />
+  <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" />
+  <link href="css/screen.css" rel="stylesheet" />
+  <link href="css/admin.css" rel="stylesheet" />
+
+  <!-- jQuery library -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="js/jquery.jqtransform.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="js/script.js"></script>
+</head>
+<body>
+<div class="logged admin-logged">
+  <div class="nav-part hide">
+    <nav class="nav pull-left">
+      <ul>
+        <li><a href="admin-user-dashboard.html">Dashboard</a></li>
+        <li><a href="javascript:;">My Profile</a></li>
+        <li><a href="javascript:;">Manage My Account</a></li>
+      </ul>
+    </nav>
+    <span class="pull-right">
+      <a href="login.html" class="links">Logout</a>
+    </span>
+  </div>
+  <!-- end .nav-part -->
+  <header class="header">
+    <a class="logo" href="javascript:;"></a>
+    <nav class="nav">
+      <ul>
+        <li class="current"><a href="admin-user-dashboard.html">Home</a></li>
+        <li><a href="admin-user-browse-opportunities.html">Browse Opportunities</a></li>
+        <li><a href="admin-user-organization-profile.html">Browse Non Profits</a></li>
+        <li><a href="javascript:;">Blog</a></li>
+        <li><a href="javascript:;">About Us</a></li>
+      </ul>
+    </nav>
+    <div class="pull-right">
+      <a href="javascript:;" class="user-name hide">
+        <span class="name-txt">James Shawn</span>
+        <img class="person" src="i/admin-user/header-people-50x50.jpg" alt="person">
+        <span class="icons icon-down icons-admin"></span>
+      </a>
+      <a href="javascript:;" class="btn-green btn-register">Register</a>
+    </div>
+  </header>
+  <!-- end .header -->
+
+  <div class="crumbs">
+    <div class="lefts pull-left">
+      <a href="admin-user-dashboard.html" class="links">Home</a>
+      <i class="icons icon-right-arrow"></i>
+      <span class="value-txt">Register</span>
+    </div>
+    <!-- end .lefts -->
+    <div class="rights pull-right">
+      <a href="javascript:;" class="icons btn-icon-search"></a>
+    </div>
+    <!-- end .rights -->
+  </div>
+  <!-- end .crumbs -->
+
+  <div class="filter-box hide">
+    <h2 class="title-h2">Search and Share Ways to Do Good</h2>
+    <div class="form-area">
+      <div class="row-search">
+        <a href="admin-user-search-result.html" class="btn-search pull-right">Search</a>
+        <div class="main-box">
+          <div class="dropdown dropdown-default pull-right">
+            <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="value selected-option">All Interest Categories</span>
+              <span class="icons icon-tag"></span>
+              <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">All Interest Categories</a></li>
+              <li><a href="javascript:;">Adult education</a></li>
+              <li><a href="javascript:;">Animals</a></li>
+              <li><a href="javascript:;">Arts and culture</a></li>
+              <li><a href="javascript:;">Children and youth education</a></li>
+              <li><a href="javascript:;">Civic and community</a></li>
+              <li><a href="javascript:;">Disaster and emergency services</a></li>
+              <li><a href="javascript:;">Environment</a></li>
+              <li><a href="javascript:;">Faith-based service</a></li>
+              <li><a href="javascript:;">Family services</a></li>
+              <li><a href="javascript:;">Health and wellness</a></li>
+              <li><a href="javascript:;">Hunger and homelessness</a></li>
+              <li><a href="javascript:;">Immigrant and refugee services</a></li>
+              <li><a href="javascript:;">International service</a></li>
+              <li><a href="javascript:;">Internships and employment</a></li>
+              <li><a href="javascript:;">Justice and legal services</a></li>
+              <li><a href="javascript:;">Schools</a></li>
+              <li><a href="javascript:;">Senior services</a></li>
+              <li><a href="javascript:;">Sports and recreation</a></li>
+              <li><a href="javascript:;">Technology</a></li>
+              <li><a href="javascript:;">Veterans and military families</a></li>
+            </ul>
+          </div>
+          <!-- end .dropdown -->
+          <span class="inputs"><i class="icons icon-search"></i><input type="search" placeholder="Search Opportunities, Group, Cities, etc" ></span>
+        </div>
+        <!-- end .main-box -->
+      </div>
+      <!-- end .row-search -->
+      <div class="row-filter hide">
+        <div class="col-calendar">
+          <span class="inputs calendar">
+            <input name="from-date" type="text" class="from-date" placeholder="From Date" readonly>
+            <a href="javascript:;" class="icons icon-calendar date-icon"></a>
+          </span>
+        </div>
+        <div class="col-calendar">
+          <span class="inputs calendar">
+            <input name="to-date" type="text" class="to-date" placeholder="To Date" readonly>
+            <a href="javascript:;" class="icons icon-calendar to-date-icon"></a>
+          </span>
+        </div>
+        <div class="col-dropdown">
+          <div class="dropdown dropdown-default">
+            <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="value selected-option">Participate in this National Events</span>
+              <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Participate in this National Events1</a></li>
+              <li><a href="javascript:;">Participate in this National Events2</a></li>
+            </ul>
+          </div>
+          <!-- end .dropdown -->
+        </div>
+      </div>
+      <!-- end .row-filter -->
+      <div class="row-btn">
+        <a href="javascript:;" class="link-more">+ More Options</a>
+        <a href="javascript:;" class="link-less hide">- Less Options</a>
+      </div>
+      <!-- end .row-btn -->
+    </div>
+    <!-- end .form-area -->
+  </div>
+  <!-- end .filter-box -->
+</div>
+<!-- end .logged -->
+
+<main class="main register-as-volunteer-main admin-main">
+  <div class="register-titles">Register as a Organization</div>
+  <div class="step-nav">
+    <ul>
+      <li class="current">
+        <i class="icons icon-arrow"></i>
+        <span class="txt">1. Organization Details</span>
+      </li>
+      <li class="">
+        <i class="icons icon-arrow"></i>
+        <span class="txt">2. Upload Media</span>
+      </li>
+      <li class="">
+        <i class="icons icon-arrow"></i>
+        <span class="txt">3. Integrate tools</span>
+      </li>
+      <li>
+        <i class="icons icon-arrow"></i>
+        <span class="txt">4. Payment Integration</span>
+      </li>
+    </ul>
+  </div>
+  <!-- end .step-nav -->
+  <div class="step-content step-one">
+    <div class="white-pannel step-pannel organization-details-pannel">
+      <div class="step-titles">1. Organization Details</div>
+      <div class="step-contents clearfix">
+        <div class="left-area">
+          <div class="contact-info-module">
+            <div class="gray-border-boxs">
+              <h4 class="titles">Enter Your Contact Information</h4>
+              <div class="form-boxs">
+                <div class="form">
+                  <div class="row">
+                    <span class="text">First Name</span>
+                    <span class="inputs">
+                      <input class="first-name-input optional" type="text" value=""/>
+                    </span>
+                  </div>
+                  <!-- end .row -->
+                  <div class="row">
+                    <span class="text">Last Name</span>
+                    <span class="inputs">
+                      <input class="last-name-input optional" type="text" value=""/>
+                    </span>
+                  </div>
+                  <!--end .row-->
+                  <div class="row">
+                    <span class="text">Email</span>
+                    <span class="inputs">
+                      <input class="email-input-box optional" type="email" value="" />
+                    </span>
+                  </div>
+                  <!-- end .row -->
+                  <div class="row">
+                    <span class="text">Password</span>
+                    <span class="inputs">
+                      <input class="password-input optional" type="password" placeholder=""/>
+                    </span>
+                  </div>
+                  <!-- end .row -->
+                  <div class="row">
+                    <span class="text">Confirm Password</span>
+                    <span class="inputs">
+                      <input class="confirm-password-input optional" type="password" placeholder=""/>
+                    </span>
+                  </div>
+                  <!-- end .row -->
+                  <div class="row">
+                    <span class="text">Postal Code</span>
+                    <span class="inputs">
+                      <input class="postal-code-input optional" type="text" value="" />
+                    </span>
+                  </div>
+                  <!-- end .row -->
+                </div>
+                <!--end .form -->
+              </div>
+              <!-- end .form-boxs -->
+              <div class="user-sign-status hide">
+                <a href="javascript:;" class="user-name">
+                  <span class="name-txt">James Shawn</span>
+                  <img class="person" src="i/admin-user/people-50x50-1.jpg" alt="person">
+                </a>
+              </div>
+              <!-- end .user-sign-status -->
+            </div>
+            <!-- .end gray-border-boxs -->
+            <div class="under-text">
+              If you have an account you can <a href="javascript:;" class="link-blue btn-sign-in">Sign in</a> and
+              then register your Organization.
+            </div>
+          </div>
+          
+        </div>
+        <!-- end .left-area -->
+        <div class="right-area">
+          <div class="gray-border-boxs">
+            <h4 class="titles">Enter your organization information</h4>
+            <div class="form-boxs">
+              <div class="form">
+                <div class="row">
+                  <span class="text">Organization Name</span>
+                  <span class="inputs">
+                    <input class="organization-name-input optional" type="text" value="" />
+                  </span>
+                </div>
+                <!-- end .row -->
+                <div class="row textarea-row">
+                  <span class="long-text">
+                    Tell Us About the Good
+                    You’re Doing
+                  </span>
+                  <span class="textareas">
+                    <textarea>Short description of what you are doing</textarea>
+                  </span>
+                </div>
+                <!--end .row-->
+                <div class="row">
+                  <span class="text">Street Address</span>
+                  <span class="inputs">
+                    <input class="street-address-input optional" type="text" value=""/>
+                  </span>
+                </div>
+                <!-- end .row -->
+                <div class="row">
+                  <span class="text">City</span>
+                  <span class="inputs">
+                    <input class="optional" type="text" value=""/>
+                  </span>
+                </div>
+                <!-- end .row -->
+                <div class="row">
+                  <span class="text">Country</span>
+                  <div class="dropdown dropdown-default">
+                    <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      <span class="value selected-option">United States</span>
+                      <span class="icons icon-tag"></span>
+                      <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="javascript:;">Afghanistan</a></li>
+                      <li><a href="javascript:;">Åland Islands</a></li>
+                      <li><a href="javascript:;">Albania</a></li>
+                      <li><a href="javascript:;">Algeria</a></li>
+                      <li><a href="javascript:;">American Samoa</a></li>
+                      <li><a href="javascript:;">Andorra</a></li>
+                      <li><a href="javascript:;">Angola</a></li>
+                      <li><a href="javascript:;">Anguilla</a></li>
+                      <li><a href="javascript:;">Antarctica</a></li>
+                      <li><a href="javascript:;">Antigua and Barbuda</a></li>
+                      <li><a href="javascript:;">Argentina</a></li>
+                      <li><a href="javascript:;">Armenia</a></li>
+                      <li><a href="javascript:;">Aruba</a></li>
+                      <li><a href="javascript:;">Australia</a></li>
+                      <li><a href="javascript:;">Austria</a></li>
+                      <li><a href="javascript:;">Azerbaijan</a></li>
+                      <li><a href="javascript:;">Bahamas (the)</a></li>
+                      <li><a href="javascript:;">Bahrain</a></li>
+                      <li><a href="javascript:;">Bangladesh</a></li>
+                      <li><a href="javascript:;">Barbados</a></li>
+                      <li><a href="javascript:;">Belarus</a></li>
+                      <li><a href="javascript:;">Belgium</a></li>
+                      <li><a href="javascript:;">Belize</a></li>
+                      <li><a href="javascript:;">Benin</a></li>
+                      <li><a href="javascript:;">Bermuda</a></li>
+                      <li><a href="javascript:;">Bhutan</a></li>
+                      <li><a href="javascript:;">Bolivia (Plurinational State of)</a></li>
+                      <li><a href="javascript:;">Bonaire, Sint Eustatius and Saba</a></li>
+                      <li><a href="javascript:;">Bosnia and Herzegovina</a></li>
+                      <li><a href="javascript:;">Botswana</a></li>
+                      <li><a href="javascript:;">Bouvet Island</a></li>
+                      <li><a href="javascript:;">Brazil</a></li>
+                      <li><a href="javascript:;">British Indian Ocean Territory (the)</a></li>
+                      <li><a href="javascript:;">Brunei Darussalam</a></li>
+                      <li><a href="javascript:;">Bulgaria</a></li>
+                      <li><a href="javascript:;">Burkina Faso</a></li>
+                      <li><a href="javascript:;">Burundi</a></li>
+                      <li><a href="javascript:;">Cabo Verde</a></li>
+                      <li><a href="javascript:;">Cambodia</a></li>
+                      <li><a href="javascript:;">Cameroon</a></li>
+                      <li><a href="javascript:;">Canada</a></li>
+                      <li><a href="javascript:;">Cayman Islands (the)</a></li>
+                      <li><a href="javascript:;">Central African Republic (the)</a></li>
+                      <li><a href="javascript:;">Chad</a></li>
+                      <li><a href="javascript:;">Chile</a></li>
+                      <li><a href="javascript:;">China</a></li>
+                      <li><a href="javascript:;">Christmas Island</a></li>
+                      <li><a href="javascript:;">Cocos (Keeling) Islands (the)</a></li>
+                      <li><a href="javascript:;">Colombia</a></li>
+                      <li><a href="javascript:;">Comoros (the)</a></li>
+                      <li><a href="javascript:;">Congo (the Democratic Republic of the)</a></li>
+                      <li><a href="javascript:;">Congo (the)</a></li>
+                      <li><a href="javascript:;">Cook Islands (the)</a></li>
+                      <li><a href="javascript:;">Costa Rica</a></li>
+                      <li><a href="javascript:;">Côte d'Ivoire</a></li>
+                      <li><a href="javascript:;">Croatia</a></li>
+                      <li><a href="javascript:;">Cuba</a></li>
+                      <li><a href="javascript:;">Curaçao</a></li>
+                      <li><a href="javascript:;">Cyprus</a></li>
+                      <li><a href="javascript:;">Czech Republic (the)</a></li>
+                      <li><a href="javascript:;">Denmark</a></li>
+                      <li><a href="javascript:;">Djibouti</a></li>
+                      <li><a href="javascript:;">Dominica</a></li>
+                      <li><a href="javascript:;">Dominican Republic (the)</a></li>
+                      <li><a href="javascript:;">Ecuador</a></li>
+                      <li><a href="javascript:;">Egypt</a></li>
+                      <li><a href="javascript:;">El Salvador</a></li>
+                      <li><a href="javascript:;">Equatorial Guinea</a></li>
+                      <li><a href="javascript:;">Eritrea</a></li>
+                      <li><a href="javascript:;">Estonia</a></li>
+                      <li><a href="javascript:;">Ethiopia</a></li>
+                      <li><a href="javascript:;">Falkland Islands (the) [Malvinas]</a></li>
+                      <li><a href="javascript:;">Faroe Islands (the)</a></li>
+                      <li><a href="javascript:;">Fiji</a></li>
+                      <li><a href="javascript:;">Finland</a></li>
+                      <li><a href="javascript:;">France</a></li>
+                      <li><a href="javascript:;">French Guiana</a></li>
+                      <li><a href="javascript:;">French Polynesia</a></li>
+                      <li><a href="javascript:;">French Southern Territories (the)</a></li>
+                      <li><a href="javascript:;">Gabon</a></li>
+                      <li><a href="javascript:;">Gambia (the)</a></li>
+                      <li><a href="javascript:;">Georgia</a></li>
+                      <li><a href="javascript:;">Germany</a></li>
+                      <li><a href="javascript:;">Ghana</a></li>
+                      <li><a href="javascript:;">Gibraltar</a></li>
+                      <li><a href="javascript:;">Greece</a></li>
+                      <li><a href="javascript:;">Greenland</a></li>
+                      <li><a href="javascript:;">Grenada</a></li>
+                      <li><a href="javascript:;">Guadeloupe</a></li>
+                      <li><a href="javascript:;">Guam</a></li>
+                      <li><a href="javascript:;">Guatemala</a></li>
+                      <li><a href="javascript:;">Guernsey</a></li>
+                      <li><a href="javascript:;">Guinea</a></li>
+                      <li><a href="javascript:;">Guinea-Bissau</a></li>
+                      <li><a href="javascript:;">Guyana</a></li>
+                      <li><a href="javascript:;">Haiti</a></li>
+                      <li><a href="javascript:;">Heard Island and McDonald Islands</a></li>
+                      <li><a href="javascript:;">Holy See (the)</a></li>
+                      <li><a href="javascript:;">Honduras</a></li>
+                      <li><a href="javascript:;">Hong Kong</a></li>
+                      <li><a href="javascript:;">Hungary</a></li>
+                      <li><a href="javascript:;">Iceland</a></li>
+                      <li><a href="javascript:;">India</a></li>
+                      <li><a href="javascript:;">Indonesia</a></li>
+                      <li><a href="javascript:;">Iran (Islamic Republic of)</a></li>
+                      <li><a href="javascript:;">Iraq</a></li>
+                      <li><a href="javascript:;">Ireland</a></li>
+                      <li><a href="javascript:;">Isle of Man</a></li>
+                      <li><a href="javascript:;">Israel</a></li>
+                      <li><a href="javascript:;">Italy</a></li>
+                      <li><a href="javascript:;">Jamaica</a></li>
+                      <li><a href="javascript:;">Japan</a></li>
+                      <li><a href="javascript:;">Jersey</a></li>
+                      <li><a href="javascript:;">Jordan</a></li>
+                      <li><a href="javascript:;">Kazakhstan</a></li>
+                      <li><a href="javascript:;">Kenya</a></li>
+                      <li><a href="javascript:;">Kiribati</a></li>
+                      <li><a href="javascript:;">Korea (the Democratic People's Republic of)</a></li>
+                      <li><a href="javascript:;">Korea (the Republic of)</a></li>
+                      <li><a href="javascript:;">Kuwait</a></li>
+                      <li><a href="javascript:;">Kyrgyzstan</a></li>
+                      <li><a href="javascript:;">Lao People's Democratic Republic (the)</a></li>
+                      <li><a href="javascript:;">Latvia</a></li>
+                      <li><a href="javascript:;">Lebanon</a></li>
+                      <li><a href="javascript:;">Lesotho</a></li>
+                      <li><a href="javascript:;">Liberia</a></li>
+                      <li><a href="javascript:;">Libya</a></li>
+                      <li><a href="javascript:;">Liechtenstein</a></li>
+                      <li><a href="javascript:;">Lithuania</a></li>
+                      <li><a href="javascript:;">Luxembourg</a></li>
+                      <li><a href="javascript:;">Macao</a></li>
+                      <li><a href="javascript:;">Macedonia (the former Yugoslav Republic of)</a></li>
+                      <li><a href="javascript:;">Madagascar</a></li>
+                      <li><a href="javascript:;">Malawi</a></li>
+                      <li><a href="javascript:;">Malaysia</a></li>
+                      <li><a href="javascript:;">Maldives</a></li>
+                      <li><a href="javascript:;">Mali</a></li>
+                      <li><a href="javascript:;">Malta</a></li>
+                      <li><a href="javascript:;">Marshall Islands (the)</a></li>
+                      <li><a href="javascript:;">Martinique</a></li>
+                      <li><a href="javascript:;">Mauritania</a></li>
+                      <li><a href="javascript:;">Mauritius</a></li>
+                      <li><a href="javascript:;">Mayotte</a></li>
+                      <li><a href="javascript:;">Mexico</a></li>
+                      <li><a href="javascript:;">Micronesia (Federated States of)</a></li>
+                      <li><a href="javascript:;">Moldova (the Republic of)</a></li>
+                      <li><a href="javascript:;">Monaco</a></li>
+                      <li><a href="javascript:;">Mongolia</a></li>
+                      <li><a href="javascript:;">Montenegro</a></li>
+                      <li><a href="javascript:;">Montserrat</a></li>
+                      <li><a href="javascript:;">Morocco</a></li>
+                      <li><a href="javascript:;">Mozambique</a></li>
+                      <li><a href="javascript:;">Myanmar</a></li>
+                      <li><a href="javascript:;">Namibia</a></li>
+                      <li><a href="javascript:;">Nauru</a></li>
+                      <li><a href="javascript:;">Nepal</a></li>
+                      <li><a href="javascript:;">Netherlands (the)</a></li>
+                      <li><a href="javascript:;">New Caledonia</a></li>
+                      <li><a href="javascript:;">New Zealand</a></li>
+                      <li><a href="javascript:;">Nicaragua</a></li>
+                      <li><a href="javascript:;">Niger (the)</a></li>
+                      <li><a href="javascript:;">Nigeria</a></li>
+                      <li><a href="javascript:;">Niue</a></li>
+                      <li><a href="javascript:;">Norfolk Island</a></li>
+                      <li><a href="javascript:;">Northern Mariana Islands (the)</a></li>
+                      <li><a href="javascript:;">Norway</a></li>
+                      <li><a href="javascript:;">Oman</a></li>
+                      <li><a href="javascript:;">Pakistan</a></li>
+                      <li><a href="javascript:;">Palau</a></li>
+                      <li><a href="javascript:;">Palestine, State of</a></li>
+                      <li><a href="javascript:;">Panama</a></li>
+                      <li><a href="javascript:;">Papua New Guinea</a></li>
+                      <li><a href="javascript:;">Paraguay</a></li>
+                      <li><a href="javascript:;">Peru</a></li>
+                      <li><a href="javascript:;">Philippines (the)</a></li>
+                      <li><a href="javascript:;">Pitcairn</a></li>
+                      <li><a href="javascript:;">Poland</a></li>
+                      <li><a href="javascript:;">Portugal</a></li>
+                      <li><a href="javascript:;">Puerto Rico</a></li>
+                      <li><a href="javascript:;">Qatar</a></li>
+                      <li><a href="javascript:;">Réunion</a></li>
+                      <li><a href="javascript:;">Romania</a></li>
+                      <li><a href="javascript:;">Russian Federation (the)</a></li>
+                      <li><a href="javascript:;">Rwanda</a></li>
+                      <li><a href="javascript:;">Saint Barthélemy</a></li>
+                      <li><a href="javascript:;">Saint Helena, Ascension and Tristan da Cunha</a></li>
+                      <li><a href="javascript:;">Saint Kitts and Nevis</a></li>
+                      <li><a href="javascript:;">Saint Lucia</a></li>
+                      <li><a href="javascript:;">Saint Martin (French part)</a></li>
+                      <li><a href="javascript:;">Saint Pierre and Miquelon</a></li>
+                      <li><a href="javascript:;">Saint Vincent and the Grenadines</a></li>
+                      <li><a href="javascript:;">Samoa</a></li>
+                      <li><a href="javascript:;">San Marino</a></li>
+                      <li><a href="javascript:;">Sao Tome and Principe</a></li>
+                      <li><a href="javascript:;">Saudi Arabia</a></li>
+                      <li><a href="javascript:;">Senegal</a></li>
+                      <li><a href="javascript:;">Serbia</a></li>
+                      <li><a href="javascript:;">Seychelles</a></li>
+                      <li><a href="javascript:;">Sierra Leone</a></li>
+                      <li><a href="javascript:;">Singapore</a></li>
+                      <li><a href="javascript:;">Sint Maarten (Dutch part)</a></li>
+                      <li><a href="javascript:;">Slovakia</a></li>
+                      <li><a href="javascript:;">Slovenia</a></li>
+                      <li><a href="javascript:;">Solomon Islands</a></li>
+                      <li><a href="javascript:;">Somalia</a></li>
+                      <li><a href="javascript:;">South Africa</a></li>
+                      <li><a href="javascript:;">South Georgia and the South Sandwich Islands</a></li>
+                      <li><a href="javascript:;">South Sudan</a></li>
+                      <li><a href="javascript:;">Spain</a></li>
+                      <li><a href="javascript:;">Sri Lanka</a></li>
+                      <li><a href="javascript:;">Sudan (the)</a></li>
+                      <li><a href="javascript:;">Suriname</a></li>
+                      <li><a href="javascript:;">Svalbard and Jan Mayen</a></li>
+                      <li><a href="javascript:;">Swaziland</a></li>
+                      <li><a href="javascript:;">Sweden</a></li>
+                      <li><a href="javascript:;">Switzerland</a></li>
+                      <li><a href="javascript:;">Syrian Arab Republic</a></li>
+                      <li><a href="javascript:;">Taiwan (Province of China)</a></li>
+                      <li><a href="javascript:;">Tajikistan</a></li>
+                      <li><a href="javascript:;">Tanzania, United Republic of</a></li>
+                      <li><a href="javascript:;">Thailand</a></li>
+                      <li><a href="javascript:;">Timor-Leste</a></li>
+                      <li><a href="javascript:;">Togo</a></li>
+                      <li><a href="javascript:;">Tokelau</a></li>
+                      <li><a href="javascript:;">Tonga</a></li>
+                      <li><a href="javascript:;">Trinidad and Tobago</a></li>
+                      <li><a href="javascript:;">Tunisia</a></li>
+                      <li><a href="javascript:;">Turkey</a></li>
+                      <li><a href="javascript:;">Turkmenistan</a></li>
+                      <li><a href="javascript:;">Turks and Caicos Islands (the)</a></li>
+                      <li><a href="javascript:;">Tuvalu</a></li>
+                      <li><a href="javascript:;">Uganda</a></li>
+                      <li><a href="javascript:;">Ukraine</a></li>
+                      <li><a href="javascript:;">United Arab Emirates (the)</a></li>
+                      <li><a href="javascript:;">United Kingdom of Great Britain and Northern Ireland (the)</a></li>
+                      <li><a href="javascript:;">United States Minor Outlying Islands (the)</a></li>
+                      <li><a href="javascript:;">United States</a></li>
+                      <li><a href="javascript:;">Uruguay</a></li>
+                      <li><a href="javascript:;">Uzbekistan</a></li>
+                      <li><a href="javascript:;">Vanuatu</a></li>
+                      <li><a href="javascript:;">Venezuela (Bolivarian Republic of)</a></li>
+                      <li><a href="javascript:;">Viet Nam</a></li>
+                      <li><a href="javascript:;">Virgin Islands (British)</a></li>
+                      <li><a href="javascript:;">Virgin Islands (U.S.)</a></li>
+                      <li><a href="javascript:;">Wallis and Futuna</a></li>
+                      <li><a href="javascript:;">Western Sahara*</a></li>
+                      <li><a href="javascript:;">Yemen</a></li>
+                      <li><a href="javascript:;">Zambia</a></li>
+                      <li><a href="javascript:;">Zimbabwe</a></li>
+                    </ul>
+                  </div>
+                  <!-- end .dropdown -->
+                </div>
+                <!-- end .row -->
+                <div class="row">
+                  <span class="text">State/Province</span>
+                  <div class="dropdown dropdown-default state-province-dropdown">
+                    <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      <span class="value selected-option">Select</span>
+                      <span class="icons icon-tag"></span>
+                      <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="javascript:;">Select</a></li>
+                      <li><a href="javascript:;">Alabama</a></li>
+                      <li><a href="javascript:;">Alaska</a></li>
+                      <li><a href="javascript:;">Arizona</a></li>
+                      <li><a href="javascript:;">Arkansas</a></li>
+                      <li><a href="javascript:;">California</a></li>
+                      <li><a href="javascript:;">Colorado</a></li>
+                      <li><a href="javascript:;">Connecticut</a></li>
+                      <li><a href="javascript:;">Delaware</a></li>
+                      <li><a href="javascript:;">District Of Columbia</a></li>
+                      <li><a href="javascript:;">Florida</a></li>
+                      <li><a href="javascript:;">Georgia</a></li>
+                      <li><a href="javascript:;">Hawaii</a></li>
+                      <li><a href="javascript:;">Idaho</a></li>
+                      <li><a href="javascript:;">Illinois</a></li>
+                      <li><a href="javascript:;">Indiana</a></li>
+                      <li><a href="javascript:;">Iowa</a></li>
+                      <li><a href="javascript:;">Kansas</a></li>
+                      <li><a href="javascript:;">Kentucky</a></li>
+                      <li><a href="javascript:;">Louisiana</a></li>
+                      <li><a href="javascript:;">Maine</a></li>
+                      <li><a href="javascript:;">Maryland</a></li>
+                      <li><a href="javascript:;">Massachusetts</a></li>
+                      <li><a href="javascript:;">Michigan</a></li>
+                      <li><a href="javascript:;">Minnesota</a></li>
+                      <li><a href="javascript:;">Mississippi</a></li>
+                      <li><a href="javascript:;">Missouri</a></li>
+                      <li><a href="javascript:;">Montana</a></li>
+                      <li><a href="javascript:;">Nebraska</a></li>
+                      <li><a href="javascript:;">Nevada</a></li>
+                      <li><a href="javascript:;">New Hampshire</a></li>
+                      <li><a href="javascript:;">New Jersey</a></li>
+                      <li><a href="javascript:;">New Mexico</a></li>
+                      <li><a href="javascript:;">New York</a></li>
+                      <li><a href="javascript:;">North Carolina</a></li>
+                      <li><a href="javascript:;">North Dakota</a></li>
+                      <li><a href="javascript:;">Ohio</a></li>
+                      <li><a href="javascript:;">Oklahoma</a></li>
+                      <li><a href="javascript:;">Oregon</a></li>
+                      <li><a href="javascript:;">Pennsylvania</a></li>
+                      <li><a href="javascript:;">Rhode Island</a></li>
+                      <li><a href="javascript:;">South Carolina</a></li>
+                      <li><a href="javascript:;">South Dakota</a></li>
+                      <li><a href="javascript:;">Tennessee</a></li>
+                      <li><a href="javascript:;">Texas</a></li>
+                      <li><a href="javascript:;">Utah</a></li>
+                      <li><a href="javascript:;">Vermont</a></li>
+                      <li><a href="javascript:;">Virginia</a></li>
+                      <li><a href="javascript:;">Washington</a></li>
+                      <li><a href="javascript:;">West Virginia</a></li>
+                      <li><a href="javascript:;">Wisconsin</a></li>
+                      <li><a href="javascript:;">Wyoming</a></li>
+                      <li><a href="javascript:;">American Samoa</a></li>
+                      <li><a href="javascript:;">Federated States of Micronesia</a></li>
+                      <li><a href="javascript:;">Guam</a></li>
+                      <li><a href="javascript:;">Marshall Islands</a></li>
+                      <li><a href="javascript:;">Northern Mariana Islands</a></li>
+                      <li><a href="javascript:;">Palau</a></li>
+                      <li><a href="javascript:;">Puerto Rico</a></li>
+                      <li><a href="javascript:;">Virgin Islands</a></li>
+                      <li><a href="javascript:;">Armed Forces Americas</a></li>
+                      <li><a href="javascript:;">Armed Forces Europe</a></li>
+                      <li><a href="javascript:;">Armed Forces Pacific</a></li>
+                    </ul>
+                  </div>
+                  <!-- end .dropdown -->
+                </div>
+                <!-- end .row -->
+                <div class="row">
+                  <span class="text">Postal Code</span>
+                  <span class="inputs">
+                    <input class="postal-code-input optional" type="text" value=""/>
+                  </span>
+                </div>
+                <!-- end .row -->
+                <div class="row">
+                  <span class="text">EIN</span>
+                  <span class="inputs">
+                    <input class="ein-input optional" type="text" value=""/>
+                  </span>
+                </div>
+                <!-- end .row -->
+                <div class="row">
+                  <span class="text">Website URL</span>
+                  <span class="inputs">
+                    <input class="website-url-input optional" type="url" value=""/>
+                  </span>
+                </div>
+                <!-- end .row -->
+              </div>
+              <!--end .form -->
+            </div>
+            <!-- end .form-body -->
+          </div>
+          <!-- .end gray-border-boxs -->
+        </div>
+        <!-- end .right-area -->
+      </div> 
+      <!-- end .step-contents  -->
+    </div>
+    <!--end .step-pannel -->
+  </div>
+  <!--end .step-one-->
+
+  <div class="step-content step-two hide">
+    <div class="white-pannel step-pannel upload-media-pannel">
+      <div class="step-titles">2. Upload Media</div>
+      <div class="gray-text">
+        <p class="text">Please upload your Organization Profile Picture, and also a Cover Image (optional).</p>
+        <p class="text">The recommended size for the Profile Picture is 200px * 200px, and the Cover is 1400px * 420px.</p>
+        <p class="text">We are going to use your Profile Picture and Cover in various sizes in our site, so we suggest you to upload them in recommended size above.</p>
+      </div>
+      <div class="upload-changed-boxs">
+        <div class="bg-img-wrapper">
+          <div class="white-circle"><i class="icons icons-admin icon-file"></i></div>
+          <div class="img-boxs hide"><img src="i/admin-user/upload-media-img.jpg" class="bg-img" alt="img" /></div>
+        </div>
+        <div class="right-change-cover">
+          <div class="change-cover-boxs">
+            <input type="file" class="input-file change-cover-input-file" />
+            Change Cover
+            <i class="icons icons-admin icon-camera"></i>
+          </div>
+        </div>
+        <div class="pic-circle-boxs">
+          <div class="boxs">
+            <div class="little-img-default">
+              <img src="i/admin-user/photo-180x180-a.jpg" class="" alt="photo" />
+            </div>
+            <div class="little-img-add">
+              <img src="i/admin-user/photo-180x180-a.jpg" class="" alt="photo" />
+            </div>
+            <div class="gray-link-boxs">
+              <input type="file" class="input-file add-photo-input-file" />
+              <i class="icons icons-admin icon-camera"></i>
+              <span class="text">Add Photo</span>
+            </div>
+            <span class="icon-boxs">
+              <a href="javascript:;" class="icons icons-admin icon-camera"></a>
+            </span>
+          </div>
+        </div>
+        <!-- end .pic-circle-boxs -->
+      </div>
+      <!-- end .upload-changed-boxs -->
+    </div>
+    <!--end .step-pannel  -->
+  </div>
+  <!--end .step-two -->
+
+  <div class="step-content step-three hide">
+    <div class="white-pannel step-pannel integrate-tools-panel">
+      <div class="step-titles">3. Integrate Tools</div>
+      <div class="gray-text">
+        <p class="text">
+          You may be interested to integrate your other links or apps into our platform, or you can simply connect your social media accounts to our platform so that
+          the volunteers can easily keep in touch with your organization. This step is optional, means that you can skip this step for now.
+        </p>
+      </div>
+      <div class="gray-border-boxs">
+        <h4 class="titles">Social Media</h4>
+        <div class="btn-list clearfix">
+          <div class="row-btn">
+            <ul>
+              <li><a href="javascript:;" class="btn-item btn-sub-blue">facebook</a></li>
+              <li><a href="javascript:;" class="btn-item btn-light-blue">twitter</a></li>
+              <li><a href="javascript:;" class="btn-item btn-sub-red">google+</a></li>
+              <li><a href="javascript:;" class="btn-item btn-blue">LinkedIn</a></li>
+              <li><a href="javascript:;" class="btn-item btn-colour">instagram</a></li>
+              <li><a href="javascript:;" class="btn-item btn-red">youtube</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- end .btn-list -->
+      </div>
+      <!-- end .gray-border-boxs -->
+      <div class="gray-border-boxs volunteer-management-tools">
+        <h4 class="titles">Volunteer Management Tools</h4>
+        <div class="btn-list clearfix">
+          <div class="row-btn">
+            <ul>
+              <li>
+                <a href="javascript:;" class="btn-item btn-dark-green">Verified Volunteer</a>
+                <div class="more-link">
+                  <a href="javascript:;" class="learn-more">
+                    Learn more
+                    <i class="icons icons-admin icon-topright-arrow"></i>
+                  </a>
+                </div>
+                <!-- end .more-link -->
+              </li>
+              <li>
+                <a href="javascript:;" class="btn-item btn-pink">
+                  <span class="block big-text">President's Volunteer</span>
+                  <span class="block little-text">Service Awards</span>
+                </a>
+                <div class="more-link">
+                  <a href="javascript:;" class="learn-more">
+                    Learn more
+                    <i class="icons icons-admin icon-topright-arrow"></i>
+                  </a>
+                </div>
+                <!-- end .more-link -->
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- end .btn-list -->
+      </div>
+      <!-- end .gray-border-boxs -->
+    </div>
+    <!--end .step-pannel -->
+  </div>
+  <!--end .step-three-->
+
+  <div class="step-content step-four hide">
+    <div class="white-pannel step-pannel interests-panel">
+      <div class="step-titles">4. Payment Integration</div>
+      <div class="gray-text">
+        <p class="text">Many volunteers may be interested to donate you. That’s why we provide some payment choices for your organization to recieve donations.</p>
+        <p class="text">Please select one of these available payment integration from these buttons below. This step is optional, means that you can skip this step for now.</p>
+      </div>
+      <!-- end .gray-text -->
+      <div class="btn-list">
+        <div class="row">
+          <div class="boxs">
+            <span class="form-container">
+              <input type="radio" name="radio" />
+            </span>
+            <div class="btn-box">
+              <span  class="btn-item btn-pay-pal">
+                <span class="dark-blue-text">Pay</span>
+                <span class="light-blue-text">pal</span>
+              </span>
+            </div>
+            <span class="right-text">Integrated!</span>
+          </div>
+          <!-- end .box -->
+        </div>
+        <!-- end .row -->
+        <div class="row">
+          <div class="boxs">
+            <span class="form-container">
+              <input type="radio" name="radio" />
+            </span>
+            <div class="btn-box">
+              <span class="btn-item btn-google-wallet">Google Wallet</span>
+            </div>
+            <span class="right-text">Integrated!</span>
+          </div>
+          <!-- end .box -->
+        </div>
+        <!-- end .row -->
+        <div class="row">
+          <div class="boxs">
+            <span class="form-container">
+              <input type="radio" name="radio" />
+            </span>
+            <div class="btn-box">
+              <span class="btn-item btn-venmo">venmo</span>
+            </div>
+            <span class="right-text">Integrated!</span>
+          </div>
+          <!-- end .box -->
+        </div>
+        <!-- end .row -->
+        <div class="row">
+          <div class="boxs">
+            <span class="form-container">
+              <input type="radio" name="radio" />
+            </span>
+            <div class="btn-box">
+              <span class="btn-item btn-network-for-good">Network <span class="font-regular">for</span> Good</span>
+            </div>
+            <span class="right-text">Integrated!</span>
+          </div>
+          <!-- end .box -->
+        </div>
+        <!-- end .row -->
+      </div>
+    </div>
+    <!--end .step-pannel -->
+  </div>
+  <!--end .step-four -->
+  
+  <div class="row row-btn">
+    <div class="left-btn pull-left">
+      <a href="javascript:;" class="btn-gray btn-cancel-step btn-width106 pull-left">Cancel</a>
+      <a href="javascript:;" class="btn-green btn-next-step btn-width81 pull-left">Next</a>
+    </div>
+    <div class="right-btn pull-right">
+      <div class="check-box pull-left hide">
+        <span class="form-container form-check-box">
+          <input type="checkbox" checked />
+        </span>
+        <span class="accept-text">I Accept the <a href="javascript:;">Terms and Conditions</a></span>
+        <a href="admin-user-dashboard.html" class="btn-green btn-finish btn-width81">Finish</a>
+      </div>
+      <a href="javascript:;" class="btn-gray-border btn-skip-this-step-for-now btn-width214 left30">Skip this step for now</a>
+    </div>
+  </div>
+  <!--div .row-btn-->
+</main>
+<!-- end .register-volunteer-main -->
+
+<footer class="footer">
+  <div class="mains">
+    <h2 class="titles">POINTS OF LIGHT</h2>
+    <p class="text">Points of Light is the largest organization in the world dedicated to volunteer service.</p>
+    <nav class="link-group clearfix pull-left">
+      <ul>
+        <li><a href="javascript:;">About Us</a>|</li>
+        <li><a href="javascript:;">FAQ</a>|</li>
+        <li><a href="javascript:;">Partners</a>|</li>
+        <li><a href="javascript:;">Privacy Policy</a>|</li>
+        <li><a href="javascript:;">Terms of Service</a>|</li>
+        <li><a href="javascript:;">Media</a></li>
+      </ul>
+    </nav>
+    <div class="copyright pull-right">&copy; 2016 Points of Light</div>
+  </div>
+</footer>
+<!-- end .footer -->
+</body>
+</html>

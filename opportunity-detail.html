@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Tags -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no">
+  <title>Opportunity Detail</title>
+
+  <!-- font -->
+  <link href="css/font.css" rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+  <!-- Main CSS -->
+  <link href="css/jquery.ui.css" rel="stylesheet" />
+  <link href="css/jqtransform.css" rel="stylesheet" />
+  <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" />
+  <link href="css/screen.css" rel="stylesheet" />
+
+  <!-- jQuery library -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="js/jquery.jqtransform.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="js/script.js"></script>
+</head>
+<body>
+<div class="logged logged-in-user">
+  <div class="nav-part">
+    <nav class="nav pull-left">
+      <ul>
+        <li><a href="volunteer-dashboard.html">Dashboard</a></li>
+        <li><a href="my-profile.html">My Profile</a></li>
+      </ul>
+    </nav>
+    <span class="pull-right">
+      <a href="login.html" class="links">Logout</a>
+    </span>
+  </div>
+  <!-- end .nav-part -->
+  <header class="header">
+    <a class="logo" href="javascript:;"></a>
+    <nav class="nav">
+      <ul>
+        <li><a href="home-logged-in-user.html">Home</a></li>
+        <li class="current"><a href="browse-opportunities-and-organizations.html">Browse Opportunities</a></li>
+        <li><a href="browse-groups.html">Browse Groups</a></li>
+        <li><a href="javascript:;">Blog</a></li>
+        <li><a href="javascript:;">About Us</a></li>
+      </ul>
+    </nav>
+    <div class="pull-right">
+      <a href="my-profile.html" class="user-name">
+        <span class="name-txt">James Shawn</span>
+        <img class="person" src="i/people-66x66-1.png" alt="person">
+        <span class="icons icon-down"></span>
+      </a>
+      <a href="register.html" class="btn-green btn-register">Register</a>
+    </div>
+  </header>
+  <!-- end .header -->
+
+  <div class="crumbs">
+    <div class="lefts pull-left">
+      <a href="browse-opportunities-and-organizations.html" class="links">Browse Opportunities</a>
+      <i class="icons icon-right-arrow"></i>
+      <span class="value-txt">Opportunity Details</span>
+    </div>
+    <!-- end .lefts -->
+    <div class="rights pull-right">
+      <a href="javascript:;" class="icons btn-icon-search"></a>
+    </div>
+    <!-- end .rights -->
+  </div>
+  <!-- end .crumbs -->
+
+  <div class="filter-box hide">
+    <h2 class="title-h2">Search and Share Ways to Do Good</h2>
+    <div class="form-area">
+      <div class="row-search">
+        <a href="search_result.html" class="btn-search pull-right">Search</a>
+        <div class="main-box">
+          <div class="dropdown dropdown-default pull-right">
+            <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="value selected-option">All Interest Categories</span>
+              <span class="icons icon-tag"></span>
+              <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">All Interest Categories</a></li>
+              <li><a href="javascript:;">Adult education</a></li>
+              <li><a href="javascript:;">Animals</a></li>
+              <li><a href="javascript:;">Arts and culture</a></li>
+              <li><a href="javascript:;">Children and youth education</a></li>
+              <li><a href="javascript:;">Civic and community</a></li>
+              <li><a href="javascript:;">Disaster and emergency services</a></li>
+              <li><a href="javascript:;">Environment</a></li>
+              <li><a href="javascript:;">Faith-based service</a></li>
+              <li><a href="javascript:;">Family services</a></li>
+              <li><a href="javascript:;">Health and wellness</a></li>
+              <li><a href="javascript:;">Hunger and homelessness</a></li>
+              <li><a href="javascript:;">Immigrant and refugee services</a></li>
+              <li><a href="javascript:;">International service</a></li>
+              <li><a href="javascript:;">Internships and employment</a></li>
+              <li><a href="javascript:;">Justice and legal services</a></li>
+              <li><a href="javascript:;">Schools</a></li>
+              <li><a href="javascript:;">Senior services</a></li>
+              <li><a href="javascript:;">Sports and recreation</a></li>
+              <li><a href="javascript:;">Technology</a></li>
+              <li><a href="javascript:;">Veterans and military families</a></li>
+            </ul>
+          </div>
+          <!-- end .dropdown -->
+          <span class="inputs"><i class="icons icon-search"></i><input type="search" placeholder="Search Opportunities, Group, Cities, etc" ></span>
+        </div>
+        <!-- end .main-box -->
+      </div>
+      <!-- end .row-search -->
+      <div class="row-filter hide">
+        <div class="col-calendar">
+          <span class="inputs calendar">
+            <input name="from-date" type="text" class="from-date" placeholder="From Date" readonly>
+            <a href="javascript:;" class="icons icon-calendar date-icon"></a>
+          </span>
+        </div>
+        <div class="col-calendar">
+          <span class="inputs calendar">
+            <input name="to-date" type="text" class="to-date" placeholder="To Date" readonly>
+            <a href="javascript:;" class="icons icon-calendar to-date-icon"></a>
+          </span>
+        </div>
+        <div class="col-dropdown">
+          <div class="dropdown dropdown-default">
+            <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="value selected-option">Participate in this National Events</span>
+              <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Participate in this National Events1</a></li>
+              <li><a href="javascript:;">Participate in this National Events2</a></li>
+            </ul>
+          </div>
+          <!-- end .dropdown -->
+        </div>
+      </div>
+      <!-- end .row-filter -->
+      <div class="row-btn">
+        <a href="javascript:;" class="link-more">+ More Options</a>
+        <a href="javascript:;" class="link-less hide">- Less Options</a>
+      </div>
+      <!-- end .row-btn -->
+    </div>
+    <!-- end .form-area -->
+  </div>
+  <!-- end .filter-box -->
+
+  <div class="banner-container hide">
+    <div class="head">
+      <nav class="nav pull-left">
+        <ul>
+          <li><a href="javascript:;">Volunteers</a></li>
+          <li><a href="javascript:;">Cause Account</a></li>
+        </ul>
+      </nav>
+      <div class="rights pull-right">
+        <a href="login.html" class="btn-green btn-log-in">Log In</a>
+      </div>
+    </div>
+    <!-- end .head -->
+    <div class="carousel-box">
+
+      <div class="with-ads hide">
+        <div class="boxs">
+          <a href="javascript:;" class="btn-close"><span class="spacing">X</span>Close ads</a>
+          <div class="info-area">
+            <p class="txt">
+              HOPE Coalition America<i class="br"></i>
+              National Financial Recovery<i class="br"></i>
+              Volunteer at Operation HOPE, Inc.
+            </p>
+            <a href="javascript:;" class="btn-green btn-join-now">Join Now</a>
+          </div>
+          <img src="i/carousel-ads-img.jpg" alt="photo" >
+        </div>
+      </div>
+      <!-- end .with-ads -->
+
+      <div class="triangle-big"></div>
+      <div class="triangle-small"></div>
+      <div id="logged-carousel-example" class="carousel slide" data-ride="carousel" data-interval="">
+        <ol class="carousel-indicators">
+          <li data-target="#logged-carousel-example" data-slide-to="0" class="active"></li>
+          <li data-target="#logged-carousel-example" data-slide-to="1"></li>
+          <li data-target="#logged-carousel-example" data-slide-to="2"></li>
+        </ol>
+        <!-- .carousel-indicators -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div class="boxs">
+              <div class="img-bg-one"></div>
+              <div class="clarity-line"></div>
+              <div class="infos">
+                <h2 class="title-h2">
+                  Spring 2016 Program<i class="br"></i>
+                  Volunteer Internship
+                </h2>
+                <p class="txt-p">
+                  Volunteer Internship OverviewSophia Jimenez, Program Manager, in support of the Program Team in Los
+                  Angeles, will coordinate this volunteer internship. Volunteer interns can expect to support...
+                </p>
+                <div class="detail-dvent">
+                  <ul>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-map"></i>
+                        <span class="txt">Redwood City, CA</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-time"></i>
+                        <span class="txt">Sat, June 3, 2016 at 10 AM</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <!-- end .detail-dvent -->
+                <div class="btn-box">
+                  <a href="javascript:;" class="btn-green btn-see-opportunity">See Opportunity</a>
+                </div>
+                <!-- end .btn-box -->
+              </div>
+              <!-- end .infos -->
+              <div class="icon-dvent">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-user"></i>
+                      <span class="txt">132</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-link"></i>
+                      <span class="txt">302</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-praise"></i>
+                      <span class="txt">483</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-comment"></i>
+                      <span class="txt">48</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-price"></i>
+                      <span class="txt">$2,740</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- end .icon-dvent -->
+            </div>
+            <!-- end .boxs -->
+          </div>
+          <!-- end .item -->
+          <div class="item">
+            <div class="boxs">
+              <div class="img-bg-two"></div>
+              <div class="clarity-line"></div>
+              <div class="infos">
+                <h2 class="title-h2">
+                  Become a reading partner- make<i class="br"></i>
+                  a lifelong impact on a child
+                </h2>
+                <p class="txt-p">
+                  Reading Partners needs volunteers like you to provide students in under-resourced elementary schools in your
+                  community with the proven, individualized reading support they need to read at grade level by fourth grade...
+                </p>
+                <div class="detail-dvent">
+                  <ul>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-map"></i>
+                        <span class="txt">Redwood City, CA</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-time"></i>
+                        <span class="txt">Sat, June 3, 2016 at 10 AM</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <!-- end .detail-dvent -->
+                <div class="btn-box">
+                  <a href="javascript:;" class="btn-green btn-see-opportunity">See Opportunity</a>
+                </div>
+                <!-- end .btn-box -->
+              </div>
+              <!-- end .infos -->
+              <div class="icon-dvent">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-user"></i>
+                      <span class="txt">132</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-link"></i>
+                      <span class="txt">302</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-praise"></i>
+                      <span class="txt">483</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-comment"></i>
+                      <span class="txt">48</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-price"></i>
+                      <span class="txt">$2,740</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- end .icon-dvent -->
+            </div>
+            <!-- end .boxs -->
+          </div>
+          <!-- end .item -->
+          <div class="item">
+            <div class="boxs">
+              <div class="img-bg-three"></div>
+              <div class="clarity-line"></div>
+              <div class="infos">
+                <h2 class="title-h2 top20">
+                  Events Coordinator Volunteer
+                </h2>
+                <p class="txt-p">
+                  End Malaria Now is seeking motivated, hard-working and responsible college students or young
+                  professionals looking to gain experience working with a nonprofit. Prior volunteer experience...
+                </p>
+                <div class="detail-dvent">
+                  <ul>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-map"></i>
+                        <span class="txt">Redwood City, CA</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-time"></i>
+                        <span class="txt">Sat, June 3, 2016 at 10 AM</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <!-- end .detail-dvent -->
+                <div class="btn-box">
+                  <a href="javascript:;" class="btn-green btn-see-opportunity">See Opportunity</a>
+                </div>
+                <!-- end .btn-box -->
+              </div>
+              <!-- end .infos -->
+              <div class="icon-dvent">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-user"></i>
+                      <span class="txt">132</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-link"></i>
+                      <span class="txt">302</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-praise"></i>
+                      <span class="txt">483</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-comment"></i>
+                      <span class="txt">48</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-price"></i>
+                      <span class="txt">$2,740</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- end .icon-dvent -->
+            </div>
+            <!-- end .boxs -->
+          </div>
+          <!-- end .item -->
+        </div>
+        <!-- .carousel-inner -->
+      </div>
+    </div>
+    <!-- end .carousel-box -->
+    <div class="banner-box hide">
+      <div class="banner-img"></div>
+      <div class="infos">
+        <h2 class="title-h2">
+          Become a reading partner<i class="br"></i>
+          make a lifelong impact on a child<i class="br"></i>
+          (Carthay Center Elementary, LA)
+        </h2>
+        <p class="txt-p">
+          Volunteer Internship OverviewSophia Jimenez, Program Manager, in support of the Program Team in Los
+          Angeles, will coordinate this volunteer internship. Volunteer interns can expect to support...
+        </p>
+        <div class="detail-dvent">
+          <ul>
+            <li>
+              <span class="icon-txt">
+                <i class="icons icon-map"></i>
+                <span class="txt">Redwood City, CA</span>
+              </span>
+            </li>
+            <li>
+              <span class="icon-txt">
+                <i class="icons icon-time"></i>
+                <span class="txt">Sat, June 3, 2016 at 10 AM</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <!-- end .detail-dvent -->
+        <div class="btn-box">
+          <a href="javascript:;" class="btn-green btn-join-this-opportunity">Join This Opportunity</a>
+        </div>
+        <!-- end .btn-box -->
+      </div>
+      <!-- end .infos -->
+
+    </div>
+    <!-- end .banner-box -->
+    <div class="story-box hide">
+      <div class="infos">
+        <div class="time-txt">Wednesday, May 29, 2016</div>
+        <h2 class="title-h2">
+          Special needs students and youth volunteers learn from each<i class="br"></i>
+          other in Rosie’s Class
+        </h2>
+        <p class="txt-p">
+          Meet Daily Point of Light Award honoree Rosie Arbittier. Read her story and nominate an outstanding volunteer, family or organization as a Point of Light.
+        </p>
+        <div class="photo-text-area">
+          <span class="photos">
+            <img src="i/story-img.png" alt="photo" >
+          </span>
+          <div class="text-area">
+            <p>
+              As a child, Rosie Arbittier, participated in walkathons sponsored by her local synagogue and placed flags on soldiers’
+              graves on Veterans Day. That spirit of volunteerism continued into her teens, when she started tutoring special
+              needs students at her middle school in York, Pennsylvania.
+            </p>
+            <p>
+              The experience was an eye-opener.
+            </p>
+            <p>
+              “I began to see how isolated these kids were,” says Rosie, now 17. “They were told not to talk to me unless I talked to
+              them first. They weren't allowed to audition to be in a school play or to try out for a team. They spent their whole
+              day with the same students and it was obvious that they just weren’t getting enough opportunities to socialize.”
+            </p>
+            <div class="btn-box">
+              <a href="javascript:;" class="btn-green btn-read-more pull-left">Read more</a>
+              <div class="icon-dvent pull-left">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-user"></i>
+                      <span class="txt">132</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-link"></i>
+                      <span class="txt">302</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-praise"></i>
+                      <span class="txt">483</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-comment"></i>
+                      <span class="txt">48</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-price"></i>
+                      <span class="txt">$2,740</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- end .icon-dvent -->
+            </div>
+            <!-- end .btn-box -->
+          </div>
+        </div>
+        <!-- end .photo-text-area -->
+      </div>
+      <!-- end .infos -->
+    </div>
+    <!-- end .story-box -->
+  </div>
+</div>
+<!-- end .logged -->
+
+<div class="opportunity-banner">
+  <div class="black-bg"></div>  
+  <a href="javascript:;"><img src="i/people-68x68-1.png" alt="user" class="user-img"></a>
+  <span class="username">Org/Group name</span>
+  <h2 class="opportunity-title">Greenhouse Rehab and Compost Management</h2>
+  <div class="banner-btn-box">
+    <a href="javascript:;" class="btn-green btn-join-the-opportunity">Join This Opportunity</a>
+  </div>
+  <div class="opportunity-share">
+    <a href="javascript:;" class="txt-t">t</a>
+    <a href="javascript:;" class="txt-g">g+</a>
+    <a href="javascript:;" class="txt-f">f</a>
+    <span class="txt-share">Share via</span>
+  </div>
+</div>
+<!-- end .opportunity-banner -->
+
+<div class="opportunity-info">
+  <div class="content">
+    <div class="opportunity-article">
+      <h3 class="title">Summary</h3>
+      <p class="txt-p logged">
+Fresh Future Farm is a huge endeavor that intends to have a major impact on our community. We want you to be part of it, not just because we need you, but because if we build this together, the results will be amazing. There are many ways to volunteer and to be part of Fresh Future Farm. We can use help around the farm on Fridays and Saturdays and 3-hour shifts are available throughout the day. Greenhouse rehabilitation and compost management positions will require manual labor and shoes that you don’t mind getting dirty. Please bring your own work gloves if possible, the Farm has a small supply for those that do not. Rehab and upkeep normally involves general repairs, cleaning, compost rotation and mixing, and transporting compost with wheelbarrows to our beds and greenhouses.       </p>
+      <div class="bootom-height"></div>
+    </div>  
+    <div class="opportunity-article">
+      <h3 class="title">Requirements</h3>
+      <p class="txt-p">
+        Volunteers must be at least 18 years of age or 15 with a parent's signed permission..
+      </p>
+      <span class="txt-p">
+        <span class="bold">Number of Volunteers needed :</span>
+        <span class="value">5-10</span>
+      </span>
+      <p class="txt-p">
+        <span class="bold">Minimum age for volunteers :</span>
+        <span class="value">15</span>
+      </p>
+      <p class="txt-p">
+        <span class="bold">Desired Skills :</span>
+        <span class="value">Public Relations, Visual Communication, Education.</span>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- end .opportunity-info -->
+
+<main class="main opportunity-detail-main opportunity-detail-page">
+  <div class="fluid-box">
+    <aside class="right-aside pull-right">
+      <div class="white-pannel location-panel">
+        <h2 class="right-panel-titles">Location</h2>
+        <div class="map-box">
+          <img src="i/location-map-img.jpg" alt="photo" >
+        </div>
+        <p class="map-txt">
+          Fresh Future Farm<i class="br"></i>
+          2008 Success Street, North Charleston, SC, <i class="br"></i>
+          Ph. (815) 300-1100<i class="br"></i>
+          FAX. (815) 300-1100
+        </p>
+      </div>
+      <!--end .location-panel -->
+
+      <div class="white-pannel contacts-panel">
+        <h2 class="right-panel-titles">Contacts</h2>
+        <div class="main-box">
+          <ul>
+            <li>
+              <div class="pic pull-left">
+                <a href="javascript:;"><img src="i/people-44x42-1.png" alt="photo"></a>
+              </div>
+              <div class="text-area">
+                <h4 class="group-name"><a href="javascript:;">Jake Blake</a></h4>
+                <span class="gray-text">888-123-4567</span>
+              </div>
+            </li>
+            <li>
+              <div class="pic pull-left">
+                <a href="javascript:;"><img src="i/people-44x42-2.png" alt="photo"></a>
+              </div>
+              <div class="text-area">
+                <h4 class="group-name"><a href="javascript:;">Utada Hikaru</a></h4>
+                <span class="gray-text">888-123-4567</span>
+              </div>
+            </li>
+            <li>
+              <div class="pic pull-left">
+                <a href="javascript:;"><img src="i/people-44x42-3.png" alt="photo"></a>
+              </div>
+              <div class="text-area">
+                <h4 class="group-name"><a href="javascript:;">Leonar Hawkings</a></h4>
+                <span class="gray-text">888-123-4567</span>
+              </div>
+            </li>
+            <li>
+              <div class="pic pull-left">
+                <a href="javascript:;"><img src="i/people-44x42-4.png" alt="photo"></a>
+              </div>
+              <div class="text-area">
+                <h4 class="group-name"><a href="javascript:;">Child Kid</a></h4>
+                <span class="gray-text">888-123-4567</span>
+              </div>
+            </li>
+            <li>
+              <div class="pic pull-left">
+                <a href="javascript:;"><img src="i/people-44x42-5.png" alt="photo"></a>
+              </div>
+              <div class="text-area">
+                <h4 class="group-name"><a href="javascript:;">Anisa Young</a></h4>
+                <span class="gray-text">888-123-4567</span>
+              </div>
+            </li>
+            <li>
+              <div class="pic pull-left">
+                <a href="javascript:;"><img src="i/people-44x42-1.png" alt="photo"></a>
+              </div>
+              <div class="text-area">
+                <h4 class="group-name"><a href="javascript:;">Jake Blake</a></h4>
+                <span class="gray-text">888-123-4567</span>
+              </div>
+            </li>
+            <li>
+              <div class="pic pull-left">
+                <a href="javascript:;"><img src="i/people-44x42-2.png" alt="photo"></a>
+              </div>
+              <div class="text-area">
+                <h4 class="group-name"><a href="javascript:;">Utada Hikaru</a></h4>
+                <span class="gray-text">888-123-4567</span>
+              </div>
+            </li>
+            <li>
+              <div class="pic pull-left">
+                <a href="javascript:;"><img src="i/people-44x42-3.png" alt="photo"></a>
+              </div>
+              <div class="text-area">
+                <h4 class="group-name"><a href="javascript:;">Leonar Hawkings</a></h4>
+                <span class="gray-text">888-123-4567</span>
+              </div>
+            </li>
+            <li>
+              <div class="pic pull-left">
+                <a href="javascript:;"><img src="i/people-44x42-4.png" alt="photo"></a>
+              </div>
+              <div class="text-area">
+                <h4 class="group-name"><a href="javascript:;">Child Kid</a></h4>
+                <span class="gray-text">888-123-4567</span>
+              </div>
+            </li>
+            <li>
+              <div class="pic pull-left">
+                <a href="javascript:;"><img src="i/people-44x42-5.png" alt="photo"></a>
+              </div>
+              <div class="text-area">
+                <h4 class="group-name"><a href="javascript:;">Anisa Young</a></h4>
+                <span class="gray-text">888-123-4567</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!--end .main-box -->
+      </div>
+      <!--end .contacts-panel -->
+
+      <div class="white-pannel direct-messages-panel">
+        <h2 class="right-panel-titles">Direct Messages</h2>
+        <div class="main-box">
+          <span class="textareas">
+            <textarea placeholder="Write messages here..."></textarea>
+          </span>
+          <a href="#" data-toggle="modal" data-target="#modal-message-ok" class="btn-gray">Submit</a>
+        </div>
+        <!--end .main-box -->
+      </div>
+      <!--end .direct-messages-panel -->
+
+    </aside>
+    <!-- end .right-aside -->
+    <div class="container-data comment-data">
+      <div class="discussions-module hide">
+        <h2 class="detail-title">Discussions</h2>
+        <div class="detail-content">
+          <div class="detail-content-article">
+            <a href="javascript:;" class="title">Community Development and Volunteerism</a>
+            <p class="txt-p bold">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem ape-
+              riam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.
+            </p>
+            <p class="txt-p">
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+              voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+              numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+            </p>
+            <div class="message list-column">
+              <ul class="left">
+                <li class="txt-comments"><a href="javascript:;">4 comments</a></li>
+                <li class="txt-like"><a href="javascript:;">21  Like</a></li>
+                <li class="txt-dislike"><a href="javascript:;">4 Dislike</a></li>
+                <li class="txt-share"><a href="javascript:;">17 Share</a></li>
+              </ul>
+              <div class="row-btn btn-rights">
+                <a href="javascript:;" class="btn-gray-border btn-dislike">
+                  <i class="icons icon-dislike"></i>
+                  Dislike
+                </a>
+                <a href="javascript:;" class="btn-gray-border btn-like">
+                  <i class="icons icon-like"></i>
+                  Like
+                </a>
+                <a href="javascript:;" class="btn-gray-border btn-share">
+                  <i class="icons icon-share"></i>
+                  Share
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="write-post">
+            <a href="javascript:;" class="photo-link">
+              <img src="i/people-50x50-1.png" alt="people" class="people">
+            </a>
+            <div class="form">
+              <div class="inputs">
+                <input class="write-post-input-box" type="text" placeholder="Write Post">
+                <a href="javascript:;" class="icons icons-write"></a>
+                <a href="javascript:;" class="icons icons-photo"></a>
+                <a href="javascript:;" class="icons icons-brow"></a>
+              </div>
+            </div>
+          </div>
+          <div class="post-area hide">
+            <div class="comment">
+              <div class="comment-mian">
+                <div class="comment-people">
+                  <div class="people">
+                    <a href="javascript:;" class="photo-link">
+                      <img src="i/people-50x50-1.png" alt="people" class="img">
+                    </a>
+                    <span class="name">John Blake</span>
+                    <span class="time">24 Minutes ago</span>
+                  </div>
+                  <a href="javascript:;" class="icons icons-spot"></a>
+                </div>
+                <p class="txt-p">
+                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                  voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+                  numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+                </p>
+              </div>
+              <div class="comment-reply hide">
+                <div class="comment-reply-one">
+                  <a href="javascript:;" class="photo-link">
+                    <img src="i/people-50x50-1.png" alt="people" class="reply-img">
+                  </a>
+                  <div class="reply-message clearfix">
+                    <p class="name">John Blake</p>
+                    <p class="content">Thanks <a href="javascript:;" class="blue">@all</a> and specially for <a href="javascript:;" class="blue">@rick</a> to accomplished the task.</p>
+                    <p class="time">1 Minutes ago</p>
+                  </div>
+                  <a href="javascript:;" class="reply">Reply</a>
+                </div>
+              </div>
+            </div>
+            <div class="comment-write">
+              <a href="javascript:;" class="photo-link">
+                <img src="i/people-50x50-1.png" alt="user" class="user-img">
+              </a>
+              <div class="form">
+                <div class="inputs">
+                  <input class="write-comment-input-box" type="text" placeholder="Comment">
+                  <a href="javascript:;" class="icons icons-brow"></a>
+                  <a href="javascript:;" class="icons icons-photo"></a>
+                  <span class="txt">Press enter to post</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="post-area">
+            <div class="comment">
+              <div class="comment-mian">
+                <div class="comment-people">
+                  <div class="people">
+                    <a href="javascript:;" class="photo-link">
+                      <img src="i/people-50x50-2.png" alt="people" class="img">
+                    </a>
+                    <span class="name">Jake Blake</span>
+                    <span class="time">24 Minutes ago</span>
+                  </div>
+                  <a href="javascript:;" class="icons icons-spot"></a>
+                </div>
+                <p class="txt-p">
+                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                  voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+                  numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+                </p>
+              </div>
+              <div class="comment-reply hide">
+                <div class="comment-reply-one">
+                  <a href="javascript:;" class="photo-link">
+                    <img src="i/people-50x50-1.png" alt="people" class="reply-img">
+                  </a>
+                  <div class="reply-message clearfix">
+                    <p class="name">John Blake</p>
+                    <p class="content">Thanks <a href="javascript:;" class="blue">@all</a> and specially for <a href="javascript:;" class="blue">@rick</a> to accomplished the task.</p>
+                    <p class="time">1 Minutes ago</p>
+                  </div>
+                  <a href="javascript:;" class="reply">Reply</a>
+                </div>
+              </div>
+              <div class="comment-reply">
+                <div class="comment-reply-one">
+                  <a href="javascript:;" class="photo-link">
+                    <img src="i/people-44x42-5.png" alt="people" class="reply-img">
+                  </a>
+                  <div class="reply-message clearfix">
+                    <p class="name">Nico robin</p>
+                    <p class="content">Thanks <a href="javascript:;" class="blue">@all</a> and specially for <a href="javascript:;" class="blue">@rick</a> to accomplished the task.</p>
+                    <p class="time">24 Minutes ago</p>
+                  </div>
+                  <a href="javascript:;" class="reply">Reply</a>
+                </div>
+              </div>
+              <div class="comment-reply">
+                <div class="comment-reply-one">
+                  <a href="javascript:;" class="photo-link">
+                    <img src="i/people-44x42-2.png" alt="people" class="reply-img">
+                  </a>
+                  <div class="reply-message clearfix">
+                    <p class="name">Mugiwara d. luffy</p>
+                    <p class="content">
+                      On the top menu bar, the text is purple and then changes to white when hovering.Let's change the text to white
+                      and then just change the purple to a lighter
+                    </p>
+                    <p class="time">24 Minutes ago</p>
+                  </div>
+                  <a href="javascript:;" class="reply">Reply</a>
+                </div>
+              </div>
+              <div class="comment-reply">
+                <div class="comment-reply-one">
+                  <a href="javascript:;" class="photo-link">
+                    <img src="i/people-44x42-1.png" alt="reply-img" class="reply-img">
+                  </a>
+                  <div class="reply-message clearfix">
+                    <p class="name">Nico robin</p>
+                    <p class="content">Thanks <a href="javascript:;" class="blue">@all</a> and specially for <a href="javascript:;" class="blue">@rick</a> to accomplished.</p>
+                    <p class="time">24 Minutes ago</p>
+                  </div>
+                  <a href="javascript:;" class="reply">Reply</a>
+                </div>
+              </div>
+            </div>
+            <div class="comment-write">
+              <a href="javascript:;" class="photo-link">
+                <img src="i/people-50x50-1.png" alt="user" class="user-img">
+              </a>
+              <div class="form">
+                <div class="inputs">
+                  <input class="write-comment-input-box" type="text" placeholder="Comment">
+                  <a href="javascript:;" class="icons icons-brow"></a>
+                  <a href="javascript:;" class="icons icons-photo"></a>
+                  <span class="txt">Press enter to post</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- .detail-content -->
+      </div>
+
+      <div class="recommended-module opportunity-recommended-module">
+        <h2 class="container-titles">Simmiliar Opportunities</h2>
+        <div class="row white-pannel row-list-item">
+          <div class="list-item">
+            <a href="opportunity-detail.html" class="photo-link">
+              <img src="i/arts-and-crafts-for-children-under-5.jpg" alt="photo" class="photo">
+            </a>
+            <div class="content">
+              <div class="top">
+                <span class="time">Sunday, Apr 02, 2017</span>
+                <div class="row-btn btn-rights pull-right">
+                  <a href="javascript:;" class="btn-gray-border btn-dislike">
+                    <i class="icons icon-dislike"></i>
+                    Dislike
+                  </a>
+                  <a href="javascript:;" class="btn-gray-border btn-like">
+                    <i class="icons icon-like"></i>
+                    Like
+                  </a>
+                  <a href="javascript:;" class="btn-gray-border btn-share">
+                    <i class="icons icon-share"></i>
+                    Share
+                  </a>
+                </div>
+              </div>
+              <span class="article-title"> <a href="opportunity-detail.html">Arts & Crafts with Kids</a></span>
+              <p class="article-content">
+                We need folks to help kids at the shelter with arts and crafts projects while their parents are in counseling sessions you can help!
+              </p>
+              <div class="detail-dvent">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-map"></i>
+                      <span class="txt">Riverside, CA 92506</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-time"></i>
+                      <span class="txt">Sunday, Apr 02, 2017 at 8:00 pm</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- .detail-dvent -->
+              <div class="bottom-bar">
+                <a href="javascript:;" class="btn-green btn-learn-more pull-left join">Join Now</a>
+                <div class="icon-dvent data">
+                  <ul>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-user"></i>
+                        <span class="txt">132</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-link"></i>
+                        <span class="txt">302</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-praise"></i>
+                        <span class="txt">483</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-comment"></i>
+                        <span class="txt">48</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-price"></i>
+                        <span class="txt">$2,740</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end .list-item-->
+        </div>
+        <!-- end .row -->
+
+        <div class="row white-pannel row-list-item">
+          <div class="list-item">
+            <a href="opportunity-detail.html" class="photo-link">
+              <img src="i/spring-gardening.jpg" alt="photo" class="photo">
+            </a>
+            <div class="content">
+              <div class="top">
+                <span class="time">Tuesday, Jan 18, 2017</span>
+                <div class="row-btn btn-rights pull-right">
+                  <a href="javascript:;" class="btn-gray-border btn-dislike">
+                    <i class="icons icon-dislike"></i>
+                    Dislike
+                  </a>
+                  <a href="javascript:;" class="btn-gray-border btn-like">
+                    <i class="icons icon-like"></i>
+                    Like
+                  </a>
+                  <a href="javascript:;" class="btn-gray-border btn-share">
+                    <i class="icons icon-share"></i>
+                    Share
+                  </a>
+                </div>
+              </div>
+              <span class="article-title"> <a href="opportunity-detail.html">Community Garden Clean-up</a></span>
+              <p class="article-content">
+                Volunteers will clean the winter crops and prepare beds for Spring plantings.
+              </p>
+              <div class="detail-dvent">
+                <ul>
+                  <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-map"></i>
+                        <span class="txt">Atlanta, GA 30318</span>
+                      </span>
+                  </li>
+                  <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-time"></i>
+                        <span class="txt">Tuesday, Jan 18, 2017 at 2:00 pm</span>
+                      </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- .detail-dvent -->
+              <div class="bottom-bar">
+                <a href="javascript:;" class="btn-green btn-learn-more pull-left join">Join Now</a>
+                <div class="icon-dvent data">
+                  <ul>
+                    <li>
+                        <span class="icon-txt">
+                          <i class="icons icon-user"></i>
+                          <span class="txt">132</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="icon-txt">
+                          <i class="icons icon-link"></i>
+                          <span class="txt">302</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="icon-txt">
+                          <i class="icons icon-praise"></i>
+                          <span class="txt">483</span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="icon-txt">
+                          <i class="icons icon-comment"></i>
+                          <span class="txt">48</span>
+                        </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-price"></i>
+                        <span class="txt">$2,740</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end .list-item-->
+        </div>
+        <!-- end .row -->
+
+        <div class="row white-pannel row-list-item">
+          <div class="list-item">
+            <a href="opportunity-detail.html" class="photo-link">
+              <img src="i/two-dancing-pic-of-week-Copy-620x350.jpg" alt="photo" class="photo">
+            </a>
+            <div class="content">
+              <div class="top">
+                <span class="time">Tuesday, Jan 31, 2017</span>
+                <div class="row-btn btn-rights pull-right">
+                  <a href="javascript:;" class="btn-gray-border btn-dislike">
+                    <i class="icons icon-dislike"></i>
+                    Dislike
+                  </a>
+                  <a href="javascript:;" class="btn-gray-border btn-like">
+                    <i class="icons icon-like"></i>
+                    Like
+                  </a>
+                  <a href="javascript:;" class="btn-gray-border btn-share">
+                    <i class="icons icon-share"></i>
+                    Share
+                  </a>
+                </div>
+              </div>
+              <span class="article-title"> <a href="opportunity-detail.html">Dancing with the Stars</a></span>
+              <p class="article-content">
+                Volunteers are needed to help set-up for our monthly dance for the residents of 
+                our Senior Retirement Home. We also welcome you to serve as dance partners for our lively residents!
+              </p>
+              <div class="detail-dvent">
+                <ul>
+                  <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-map"></i>
+                        <span class="txt">Atlanta, GA 30318</span>
+                      </span>
+                  </li>
+                  <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-time"></i>
+                        <span class="txt">Tuesday, Jan 31, 2017 at 5:00 pm</span>
+                      </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- .detail-dvent -->
+              <div class="bottom-bar">
+                <a href="javascript:;" class="btn-green btn-learn-more pull-left join">Join Now</a>
+                <div class="icon-dvent data">
+                  <ul>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-user"></i>
+                        <span class="txt">132</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-link"></i>
+                        <span class="txt">302</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-praise"></i>
+                        <span class="txt">483</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-comment"></i>
+                        <span class="txt">48</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-price"></i>
+                        <span class="txt">$2,740</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end .list-item-->
+        </div>
+        <!-- end .row -->
+      </div>
+      <!--end .module-->
+    </div>
+    <!-- end .fluid-box -->
+  </div>
+  <!-- end .container-data -->
+</main>
+<!-- end .opportunity-detail-main -->
+
+<footer class="footer">
+  <div class="mains">
+    <h2 class="titles">POINTS OF LIGHT</h2>
+    <p class="text">Points of Light is the largest organization in the world dedicated to volunteer service.</p>
+    <nav class="link-group clearfix pull-left">
+      <ul>
+        <li><a href="javascript:;">About Us</a>|</li>
+        <li><a href="javascript:;">FAQ</a>|</li>
+        <li><a href="javascript:;">Partners</a>|</li>
+        <li><a href="javascript:;">Privacy Policy</a>|</li>
+        <li><a href="javascript:;">Terms of Service</a>|</li>
+        <li><a href="javascript:;">Media</a></li>
+      </ul>
+    </nav>
+    <div class="copyright pull-right">&copy; 2016 Points of Light</div>
+  </div>
+</footer>
+<!-- end .footer -->
+
+<div class="modal modal-default modal-message fade" id="modal-message-ok" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Direct Messages</h4>
+        <a href="#" class="btn-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a>
+      </div>
+      <!-- end .modal-header -->
+      <div class="modal-body">
+        <div class="txt-green">Message sent successfully!</div>
+      </div>
+      <!-- end .modal-body -->
+    </div>
+    <!-- .modal-content -->
+  </div>
+  <!-- .modal-dialog -->
+</div>
+<!-- #modal-message-ok-->
+</body>
+</html>

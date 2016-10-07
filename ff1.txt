@@ -1,0 +1,6 @@
+1.avoid use of "!important" in css file.
+--There is 1 "!important" can not be avoided,this is casued by using 3rd party circel chart,
+I have to use "!important" to override the default style.
+
+2.--Other issues that is asked in forum are not fixed:
+  https://apps.topcoder.com/forums/?module=Thread&threadID=887120&start=0

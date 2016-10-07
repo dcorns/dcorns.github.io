@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Tags -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no">
+  <title>Admin User Dashboard</title>
+
+  <!-- font -->
+  <link href="css/font.css" rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+  <!-- Main CSS -->
+  <link href="css/jquery.ui.css" rel="stylesheet" />
+  <link href="css/jqtransform.css" rel="stylesheet" />
+  <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" />
+  <link href="css/screen.css" rel="stylesheet" />
+  <link href="css/admin.css" rel="stylesheet" />
+
+  <!-- jQuery library -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="js/jquery.jqtransform.js"></script>
+  <script src="js/ichart.1.2.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="js/script.js"></script>
+</head>
+<body>
+<div class="logged admin-logged">
+  <div class="nav-part">
+    <nav class="nav pull-left">
+      <ul>
+        <li class="current"><a href="admin-user-dashboard.html">Dashboard</a></li>
+        <li><a href="javascript:;">My Profile</a></li>
+        <li><a href="javascript:;">Manage My Account</a></li>
+      </ul>
+    </nav>
+    <span class="pull-right">
+      <a href="login.html" class="links">Logout</a>
+    </span>
+  </div>
+  <!-- end .nav-part -->
+  <header class="header">
+    <a class="logo" href="javascript:;"></a>
+    <nav class="nav">
+      <ul>
+        <li><a href="admin-user-dashboard.html">Home</a></li>
+        <li><a href="admin-user-browse-opportunities.html">Browse Opportunities</a></li>
+        <li><a href="admin-user-organization-profile.html">Browse Non Profits</a></li>
+        <li><a href="javascript:;">Blog</a></li>
+        <li><a href="javascript:;">About Us</a></li>
+      </ul>
+    </nav>
+    <div class="pull-right">
+      <a href="javascript:;" class="user-name">
+        <span class="name-txt">Germaine Jenkins</span>
+        <img class="person" src="i/admin-user/header-people-50x50.jpg" alt="person">
+        <span class="icons icon-down icons-admin"></span>
+      </a>
+    </div>
+  </header>
+  <!-- end .header -->
+
+  <div class="crumbs">
+    <div class="lefts pull-left">
+      <span class="value-txt root-level">Dahsboard</span>
+      <i class="icons icon-right-arrow"></i>
+    </div>
+    <!-- end .lefts -->
+    <div class="rights pull-right">
+      <a href="javascript:;" class="icons btn-icon-search"></a>
+    </div>
+    <!-- end .rights -->
+  </div>
+  <!-- end .crumbs -->
+
+  <div class="filter-box hide">
+    <h2 class="title-h2">Search and Share Ways to Do Good</h2>
+    <div class="form-area">
+      <div class="row-search">
+        <a href="admin-user-search-result.html" class="btn-search pull-right">Search</a>
+        <div class="main-box">
+          <div class="dropdown dropdown-default pull-right">
+            <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="value selected-option">All Interest Categories</span>
+              <span class="icons icon-tag"></span>
+              <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">All Interest Categories</a></li>
+              <li><a href="javascript:;">Adult education</a></li>
+              <li><a href="javascript:;">Animals</a></li>
+              <li><a href="javascript:;">Arts and culture</a></li>
+              <li><a href="javascript:;">Children and youth education</a></li>
+              <li><a href="javascript:;">Civic and community</a></li>
+              <li><a href="javascript:;">Disaster and emergency services</a></li>
+              <li><a href="javascript:;">Environment</a></li>
+              <li><a href="javascript:;">Faith-based service</a></li>
+              <li><a href="javascript:;">Family services</a></li>
+              <li><a href="javascript:;">Health and wellness</a></li>
+              <li><a href="javascript:;">Hunger and homelessness</a></li>
+              <li><a href="javascript:;">Immigrant and refugee services</a></li>
+              <li><a href="javascript:;">International service</a></li>
+              <li><a href="javascript:;">Internships and employment</a></li>
+              <li><a href="javascript:;">Justice and legal services</a></li>
+              <li><a href="javascript:;">Schools</a></li>
+              <li><a href="javascript:;">Senior services</a></li>
+              <li><a href="javascript:;">Sports and recreation</a></li>
+              <li><a href="javascript:;">Technology</a></li>
+              <li><a href="javascript:;">Veterans and military families</a></li>
+            </ul>
+          </div>
+          <!-- end .dropdown -->
+          <span class="inputs"><i class="icons icon-search"></i><input type="search" placeholder="Search Opportunities, Group, Cities, etc" ></span>
+        </div>
+        <!-- end .main-box -->
+      </div>
+      <!-- end .row-search -->
+      <div class="row-filter hide">
+        <div class="col-calendar">
+          <span class="inputs calendar">
+            <input name="from-date" type="text" class="from-date" placeholder="From Date" readonly>
+            <a href="javascript:;" class="icons icon-calendar date-icon"></a>
+          </span>
+        </div>
+        <div class="col-calendar">
+          <span class="inputs calendar">
+            <input name="to-date" type="text" class="to-date" placeholder="To Date" readonly>
+            <a href="javascript:;" class="icons icon-calendar to-date-icon"></a>
+          </span>
+        </div>
+        <div class="col-dropdown">
+          <div class="dropdown dropdown-default">
+            <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="value selected-option">Participate in this National Events</span>
+              <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Participate in this National Events1</a></li>
+              <li><a href="javascript:;">Participate in this National Events2</a></li>
+            </ul>
+          </div>
+          <!-- end .dropdown -->
+        </div>
+      </div>
+      <!-- end .row-filter -->
+      <div class="row-btn">
+        <a href="javascript:;" class="link-more">+ More Options</a>
+        <a href="javascript:;" class="link-less hide">- Less Options</a>
+      </div>
+      <!-- end .row-btn -->
+    </div>
+    <!-- end .form-area -->
+  </div>
+  <!-- end .filter-box -->
+</div>
+<!-- end .logged -->
+
+<main class="main admin-dashboard-main admin-main">
+  <div class="tab-head">
+    <nav class="nav-tab pull-left">
+      <ul>
+        <li class="active"><a href="javascript:;">Active</a></li>
+        <li><a href="javascript:;">Expired</a></li>
+        <li><a href="javascript:;">Pending</a></li>
+      </ul>
+    </nav>
+    <!-- end .nav-tab -->
+    <div class="rights pull-right">
+      <a href="admin-user-post-opportunities.html" class="btn-green btn-create-opportunity">Create Opportunity</a>
+    </div>
+    <!-- end .rights -->
+  </div>
+  <!-- end .tab-head -->
+
+  <div class="fluid-box">
+    <aside class="right-aside pull-right">
+      <div class="white-pannel my-profile-panel">
+        <h2 class="right-panel-titles pull-left">Your Opp. Status</h2>
+        <span class="txt-week pull-left">This Week</span>
+        <a href="javascript:;" class="icons icon-details"></a>
+        <div class="opp-status-week">
+          <div class="row">
+            <div class="lefts">
+              <span class="txt">Being Searched</span>
+              <span class="value">294</span>
+            </div>
+            <!--end .lefts -->
+            <div class="rights">
+              <div class="chart being-searched-chart" id="being-searched-chart0">
+              </div>
+            </div>
+            <!--end .rights -->
+            <div class="clearfix"></div>
+          </div>
+          <!--end .row -->
+          <div class="row">
+            <div class="lefts">
+              <span class="txt">Volunteers</span>
+              <span class="value">+ 173</span>
+            </div>
+            <!--end .lefts -->
+            <div class="rights">
+              <div class="chart volunteers-chart" id="volunteers-chart0">
+              </div>
+            </div>
+            <!--end .rights -->
+            <div class="clearfix"></div>
+          </div>
+          <!--end .row -->
+          <div class="row">
+            <div class="lefts">
+              <span class="txt">Donation</span>
+              <span class="value">+ $3,820</span>
+            </div>
+            <!--end .lefts -->
+            <div class="rights">
+              <div class="chart donation-chart" id="donation-chart0">
+              </div>
+            </div>
+            <!--end .rights -->
+            <div class="clearfix"></div>
+          </div>
+          <!--end .row -->
+        </div>
+        <!--end .opp-status-week -->
+      </div>
+      <!-- end .my-profile-panel -->
+
+      <div class="white-pannel my-profile-panel">
+        <h2 class="right-panel-titles">Followers</h2>
+        <a href="javascript:;" class="icons icon-details"></a>
+        <div class="my-friends">
+          <ul class="clearfix">
+            <li>
+              <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+              <span class="active check-circle"></span>
+            </li>
+            <li>
+              <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+              <a href="javascript:;" class="check-circle"></a>
+            </li>
+            <li>
+              <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+              <span class="check-circle"></span>
+            </li>
+            <li>
+              <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+              <span class="active check-circle"></span>
+            </li>
+            <li>
+              <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+              <span class="active check-circle"></span>
+            </li>
+            <li>
+              <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+              <span class="active check-circle"></span>
+            </li>
+            <li>
+              <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+              <span class="check-circle"></span>
+            </li>
+            <li>
+              <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+              <span class="active check-circle"></span>
+            </li>
+            <li>
+              <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+              <span class="check-circle"></span>
+            </li>
+            <li>
+              <a href="javascript:;"><div class="round dark-blue">AK</div></a>
+              <span class="active check-circle"></span>
+            </li>
+            <li>
+              <a href="javascript:;"><div class="round dark-blue">RB</div></a>
+              <span class="active check-circle"></span>
+            </li>
+            <li>
+              <a href="javascript:;"><div class="round light-blue">+215</div></a>
+            </li>
+          </ul>
+          <!-- end ul -->
+          <div class="my-profile-panel-footer">
+            <p class="gray-txt">5 mutual friends / 227 members</p>
+          </div>
+          <!-- end .my-profile-panel-footer -->
+        </div>
+        <!--end .my-firends -->
+      </div>
+      <!-- end .my-profile-panel -->
+
+      <div class="white-pannel my-profile-panel">
+        <h2 class="right-panel-titles">Volunteer Management Tools</h2>
+        <a href="javascript:;" class="icons icon-details"></a>
+        <div class="volunteer-management-tools">
+          <p class="txt-p">
+            Please connect to our unique offerings to get
+            you easier organize your oppotunities.
+          </p>
+          <div class="gray-border-boxs">
+            <div class="btn-list clearfix">
+              <div class="row-btn">
+                <ul>
+                  <li>
+                    <a href="javascript:;" class="btn-item btn-dark-green">Verified Volunteer</a>
+                    <div class="more-link">
+                      <a href="javascript:;" class="learn-more">
+                        Learn more
+                        <i class="icons icons-admin icon-topright-arrow"></i>
+                      </a>
+                    </div>
+                    <!-- end .more-link -->
+                  </li>
+                  <li>
+                    <a href="javascript:;" class="btn-item btn-pink">
+                      <span class="block big-text">President's Volunteer</span>
+                      <span class="block little-text">Service Awards</span>
+                    </a>
+                    <div class="more-link">
+                      <a href="javascript:;" class="learn-more">
+                        Learn more
+                        <i class="icons icons-admin icon-topright-arrow"></i>
+                      </a>
+                    </div>
+                    <!-- end .more-link -->
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- end .btn-list -->
+          </div>
+          <!-- end .gray-border-boxs -->
+        </div>
+        <!--end .my-firends -->
+      </div>
+      <!-- end .my-profile-panel -->
+
+      <div class="white-pannel my-profile-panel">
+        <div class="btn-box">
+          <a href="javascript:;" class="btn-add-widget">+ Add a Widget</a>
+        </div>
+        <!--end .btn-box -->
+      </div>
+      <!-- end .my-profile-panel -->
+
+    </aside>
+    <!-- end .right-aside -->
+    <div class="tab-content-area container-data tab-container-active">
+      <div class="filter-box">
+        <div class="form-area">
+          <div class="row-search">
+            <a href="admin-user-search-result.html" class="btn-search pull-right">Search</a>
+            <div class="main-box">
+              <div class="dropdown dropdown-default pull-right">
+                <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <span class="value selected-option">All Interest Categories</span>
+                  <span class="icons icon-tag"></span>
+                  <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="javascript:;">All Interest Categories</a></li>
+                  <li><a href="javascript:;">Adult education</a></li>
+                  <li><a href="javascript:;">Animals</a></li>
+                  <li><a href="javascript:;">Arts and culture</a></li>
+                  <li><a href="javascript:;">Children and youth education</a></li>
+                  <li><a href="javascript:;">Civic and community</a></li>
+                  <li><a href="javascript:;">Disaster and emergency services</a></li>
+                  <li><a href="javascript:;">Environment</a></li>
+                  <li><a href="javascript:;">Faith-based service</a></li>
+                  <li><a href="javascript:;">Family services</a></li>
+                  <li><a href="javascript:;">Health and wellness</a></li>
+                  <li><a href="javascript:;">Hunger and homelessness</a></li>
+                  <li><a href="javascript:;">Immigrant and refugee services</a></li>
+                  <li><a href="javascript:;">International service</a></li>
+                  <li><a href="javascript:;">Internships and employment</a></li>
+                  <li><a href="javascript:;">Justice and legal services</a></li>
+                  <li><a href="javascript:;">Schools</a></li>
+                  <li><a href="javascript:;">Senior services</a></li>
+                  <li><a href="javascript:;">Sports and recreation</a></li>
+                  <li><a href="javascript:;">Technology</a></li>
+                  <li><a href="javascript:;">Veterans and military families</a></li>
+                </ul>
+              </div>
+              <!-- end .dropdown -->
+              <span class="inputs"><i class="icons icon-search"></i><input type="search" placeholder="Search Your Opportunities" ></span>
+            </div>
+            <!-- end .main-box -->
+          </div>
+          <!-- end .row-search -->
+          <div class="row-filter hide">
+            <div class="col-calendar">
+              <span class="inputs calendar">
+                <input name="from-date" type="text" class="from-date" placeholder="From Date" readonly>
+                <a href="javascript:;" class="icons icon-calendar date-icon"></a>
+              </span>
+            </div>
+            <div class="col-calendar">
+              <span class="inputs calendar">
+                <input name="to-date" type="text" class="to-date" placeholder="To Date" readonly>
+                <a href="javascript:;" class="icons icon-calendar to-date-icon"></a>
+              </span>
+            </div>
+            <div class="col-dropdown">
+              <div class="dropdown dropdown-default">
+                <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <span class="value selected-option">Participate in this National Events</span>
+                  <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="javascript:;">Participate in this National Events1</a></li>
+                  <li><a href="javascript:;">Participate in this National Events2</a></li>
+                </ul>
+              </div>
+              <!-- end .dropdown -->
+            </div>
+          </div>
+          <!-- end .row-filter -->
+          <div class="row-btn">
+            <a href="javascript:;" class="link-more">+ More Options</a>
+            <a href="javascript:;" class="link-less hide">- Less Options</a>
+          </div>
+          <!-- end .row-btn -->
+        </div>
+        <!-- end .form-area -->
+      </div>
+      <!-- end .filter-box -->
+
+      <div class="list list-column">
+        <div class="title-bar">
+          <h3 class="rights pull-right">
+            <a href="javascript:;" class="link-icon-down"><i class="icons icon-chevron-down"></i><span class="txt">Filters</span></a>
+          </h3>
+          <h2 class="container-titles">Your Active Opportunities</h2>
+        </div>
+        <div class="container-fluid">
+          <div class="list-item">
+            <a href="admin-user-opportunity-detail.html" class="photo-link">
+              <img src="i/admin-user/photo-400x400-8.jpg" alt="photo" class="photo">
+            </a>
+            <div class="content">
+              <div class="top">
+                <div class="icon-dvent data">
+                  <ul>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-user"></i>
+                        <span class="txt">132</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-link"></i>
+                        <span class="txt">302</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-praise"></i>
+                        <span class="txt">483</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-comment"></i>
+                        <span class="txt">48</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-price"></i>
+                        <span class="txt">$2,740</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row-btn btn-rights">
+                  <a href="javascript:;" class="icons icons-admin btn-icon-edit pull-left"></a>
+                </div>
+              </div>
+              <span class="article-title">
+                <a href="admin-user-opportunity-detail.html">Greenhouse Rehab and Compost Management</a>
+              </span>
+              <p class="article-content">
+                Volunteers are needed for 3 hour shifts to help with structural rehab for several of our greenhouses,
+                 as well as compost area upkeep and management.
+              </p>
+              <div class="detail-dvent">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-map"></i>
+                      <span class="txt">North Charleston, SC, 29405</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-time"></i>
+                      <span class="txt">Jan 31,  2017 at 5:00 PM</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- .detail-dvent -->
+              <div class="bottom-bar">
+                <div class="my-friends">
+                  <ul class="friends-ul">
+                    <li>
+                      <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                      <span class="active check-circle"></span>
+                    </li>
+                    <li>
+                      <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                      <span class="check-circle"></span>
+                    </li>
+                    <li>
+                      <a href="javascript:;"><img src="i/admin-user/people-44x42-2.jpg" alt="photo"></a>
+                      <span class="check-circle"></span>
+                    </li>
+                    <li>
+                      <a href="javascript:;"><img src="i/admin-user/people-44x42-3.jpg" alt="photo"></a>
+                      <span class="active check-circle"></span>
+                    </li>
+                    <li>
+                      <a href="javascript:;"><img src="i/admin-user/people-44x42-4.jpg" alt="photo"></a>
+                      <span class="active check-circle"></span>
+                    </li>
+                    <li>
+                      <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                      <span class="check-circle"></span>
+                    </li>
+                    <li>
+                      <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                      <span class="active check-circle"></span>
+                    </li>
+                    <li>
+                      <a href="javascript:;"><div class="round light-blue">+7</div></a>
+                    </li>
+                  </ul>
+                  <!-- end ul -->
+                </div>
+                <!--end .my-badges-->
+              </div>
+            </div>
+          </div>
+          <!-- end .list-item -->
+          
+          <div class="list-item">
+            <a href="admin-user-opportunity-detail.html" class="photo-link">
+              <img src="i/admin-user/photo-250x240-3.jpg" alt="photo" class="photo">
+            </a>
+            <div class="content">
+              <div class="top">
+                <div class="icon-dvent data">
+                  <ul>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-user"></i>
+                        <span class="txt">132</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-link"></i>
+                        <span class="txt">302</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-praise"></i>
+                        <span class="txt">483</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-comment"></i>
+                        <span class="txt">48</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-price"></i>
+                        <span class="txt">$2,740</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row-btn btn-rights">
+                  <a href="javascript:;" class="icons icons-admin btn-icon-edit pull-left"></a>
+                </div>
+              </div>
+              <span class="article-title">
+                <a href="admin-user-opportunity-detail.html">Community Garden Clean-up</a>
+              </span>
+              <p class="article-content">
+                Volunteers will clean the winter crops and prepare beds for Spring plantings.
+              </p>
+              <div class="detail-dvent">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-map"></i>
+                      <span class="txt">North Charleston, SC</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-time"></i>
+                      <span class="txt">Jan 18,  2017 at 2:00 PM</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- .detail-dvent -->
+              <div class="bottom-bar">
+                <div class="my-friends">
+                  <ul class="friends-ul">
+                    <li>
+                      <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                      <span class="active check-circle"></span>
+                    </li>
+                    <li>
+                      <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                      <span class="check-circle"></span>
+                    </li>
+                    <li>
+                      <a href="javascript:;"><img src="i/admin-user/people-44x42-2.jpg" alt="photo"></a>
+                      <span class="check-circle"></span>
+                    </li>
+                    <li>
+                      <a href="javascript:;"><img src="i/admin-user/people-44x42-3.jpg" alt="photo"></a>
+                      <span class="active check-circle"></span>
+                    </li>
+                    <li>
+                      <a href="javascript:;"><img src="i/admin-user/people-44x42-4.jpg" alt="photo"></a>
+                      <span class="active check-circle"></span>
+                    </li>
+                    <li>
+                      <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                      <span class="check-circle"></span>
+                    </li>
+                    <li>
+                      <a href="javascript:;"><img src="i/admin-user/people-44x42-3.jpg" alt="photo"></a>
+                      <span class="active check-circle"></span>
+                    </li>
+                  </ul>
+                  <!-- end ul -->
+                </div>
+                <!--end .my-badges-->
+              </div>
+            </div>
+          </div>
+          <!-- end .list-item -->
+
+          <div class="row-btn">
+            <a href="javascript:;" class="btn-gray-border btn-see-more">See more</a>
+          </div>
+          <!-- end .row-btn -->
+        </div>
+      </div>
+      <!-- end .list-column -->
+    </div>
+    <!-- end .tab-container-active -->
+
+    <div class="tab-content-area container-data tab-container-expired hide">
+      <div class="filter-box">
+        <div class="form-area">
+          <div class="row-search">
+            <a href="admin-user-search-result.html" class="btn-search pull-right">Search</a>
+            <div class="main-box">
+              <div class="dropdown dropdown-default pull-right">
+                <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <span class="value selected-option">All Interest Categories</span>
+                  <span class="icons icon-tag"></span>
+                  <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="javascript:;">All Interest Categories</a></li>
+                  <li><a href="javascript:;">Adult education</a></li>
+                  <li><a href="javascript:;">Animals</a></li>
+                  <li><a href="javascript:;">Arts and culture</a></li>
+                  <li><a href="javascript:;">Children and youth education</a></li>
+                  <li><a href="javascript:;">Civic and community</a></li>
+                  <li><a href="javascript:;">Disaster and emergency services</a></li>
+                  <li><a href="javascript:;">Environment</a></li>
+                  <li><a href="javascript:;">Faith-based service</a></li>
+                  <li><a href="javascript:;">Family services</a></li>
+                  <li><a href="javascript:;">Health and wellness</a></li>
+                  <li><a href="javascript:;">Hunger and homelessness</a></li>
+                  <li><a href="javascript:;">Immigrant and refugee services</a></li>
+                  <li><a href="javascript:;">International service</a></li>
+                  <li><a href="javascript:;">Internships and employment</a></li>
+                  <li><a href="javascript:;">Justice and legal services</a></li>
+                  <li><a href="javascript:;">Schools</a></li>
+                  <li><a href="javascript:;">Senior services</a></li>
+                  <li><a href="javascript:;">Sports and recreation</a></li>
+                  <li><a href="javascript:;">Technology</a></li>
+                  <li><a href="javascript:;">Veterans and military families</a></li>
+                </ul>
+              </div>
+              <!-- end .dropdown -->
+              <span class="inputs"><i class="icons icon-search"></i><input type="search" placeholder="Search Your Opportunities" ></span>
+            </div>
+            <!-- end .main-box -->
+          </div>
+          <!-- end .row-search -->
+          <div class="row-filter hide">
+            <div class="col-calendar">
+              <span class="inputs calendar">
+                <input name="from-date" type="text" class="from-date" placeholder="From Date" readonly>
+                <a href="javascript:;" class="icons icon-calendar date-icon"></a>
+              </span>
+            </div>
+            <div class="col-calendar">
+              <span class="inputs calendar">
+                <input name="to-date" type="text" class="to-date" placeholder="To Date" readonly>
+                <a href="javascript:;" class="icons icon-calendar to-date-icon"></a>
+              </span>
+            </div>
+            <div class="col-dropdown">
+              <div class="dropdown dropdown-default">
+                <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <span class="value selected-option">Participate in this National Events</span>
+                  <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="javascript:;">Participate in this National Events1</a></li>
+                  <li><a href="javascript:;">Participate in this National Events2</a></li>
+                </ul>
+              </div>
+              <!-- end .dropdown -->
+            </div>
+          </div>
+          <!-- end .row-filter -->
+          <div class="row-btn">
+            <a href="javascript:;" class="link-more">+ More Options</a>
+            <a href="javascript:;" class="link-less hide">- Less Options</a>
+          </div>
+          <!-- end .row-btn -->
+        </div>
+        <!-- end .form-area -->
+      </div>
+      <!-- end .filter-box -->
+
+      <div class="list list-column">
+        <div class="title-bar">
+          <h3 class="rights pull-right">
+            <a href="javascript:;" class="link-icon-down"><i class="icons icon-chevron-down"></i><span class="txt">Filters</span></a>
+          </h3>
+          <h2 class="container-titles">Your Expired Opportunities</h2>
+        </div>
+        <div class="container-fluid">
+          <div class="list-item">
+            <a href="admin-user-opportunity-detail.html" class="photo-link">
+              <img src="i/admin-user/photo-250x170-1.jpg" alt="photo" class="photo">
+            </a>
+            <div class="content">
+              <div class="top">
+                <div class="icon-dvent data">
+                  <ul>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-user"></i>
+                        <span class="txt">132</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-link"></i>
+                        <span class="txt">302</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-praise"></i>
+                        <span class="txt">483</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-comment"></i>
+                        <span class="txt">48</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-price"></i>
+                        <span class="txt">$2,740</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row-btn btn-rights">
+                  <a href="javascript:;" class="btn-gray">SUCCESS</a>
+                </div>
+              </div>
+              <span class="article-title">
+                <a href="admin-user-opportunity-detail.html">Farming for Kids</a>
+              </span>
+              <p class="article-content">
+				Educate our children to learn about nature and get closer to their surrounding
+              </p>
+              <div class="detail-dvent">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-map"></i>
+                      <span class="txt">North Charleston, SC	, 30318</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-time"></i>
+                      <span class="txt">Jan 18,  2016 at 2:00 PM</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- .detail-dvent -->
+            </div>
+            <div class="show-content hide">
+              <div class="tables">
+                <div class="col col-left">
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Opportunity Status</h2>
+                    <div class="opp-status-week">
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Being Searched</span>
+                          <span class="value">684</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart being-searched-chart" id="being-searched-chart1">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Volunteers</span>
+                          <span class="value">38</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart volunteers-chart" id="volunteers-chart1">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Donation</span>
+                          <span class="value">$13,820</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart donation-chart" id="donation-chart1">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                    </div>
+                    <!--end .opp-status-week -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+                </div>
+                <!-- .col-left -->
+                <div class="col col-right">
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Fundraising Goal</h2>
+                    <div class="fundraising-goal">
+                      <div class="lefts pull-left">
+                        <span class="txt">$13,820 / $10,000</span>
+                      </div>
+                      <div class="rights pull-right">
+                        <span class="blue-bar pull-left"></span>
+                        <span class="txt pull-left">110%</span>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <!--end .fundraising-goal -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Total Volunteers Stats</h2>
+                    <div class="my-friends">
+                      <ul class="clearfix">
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <a href="javascript:;" class="check-circle"></a>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round dark-blue">AK</div></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round dark-blue">RB</div></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round light-blue">+27</div></a>
+                        </li>
+                      </ul>
+                      <!-- end ul -->
+                      <div class="my-profile-panel-footer">
+                        <p class="gray-txt">5 mutual friends / 38 members</p>
+                      </div>
+                      <!-- end .my-profile-panel-footer -->
+                    </div>
+                    <!--end .my-firends -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+
+                </div>
+                <!-- .col-right -->
+              </div>
+              <!-- .tables -->
+            </div>
+            <!-- .show-content -->
+            <a href="javascript:;" class="btn-gray-bar btn-gray-show"><i class="icons icons-admin icon-arrow"></i><span class="txt">Show Report Summary</span></a>
+            <a href="javascript:;" class="btn-gray-bar btn-gray-hide hide"><i class="icons icons-admin icon-arrow"></i><span class="txt">Hide Report Summary</span></a>
+            <!-- .btn-gray-bar -->
+          </div>
+          <!-- end .list-item -->
+
+          <div class="list-item">
+            <a href="admin-user-opportunity-detail.html" class="photo-link">
+              <img src="i/admin-user/photo-250x170-2.jpg" alt="photo" class="photo">
+            </a>
+            <div class="content">
+              <div class="top">
+                <div class="icon-dvent data">
+                  <ul>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-user"></i>
+                        <span class="txt">132</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-link"></i>
+                        <span class="txt">302</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-praise"></i>
+                        <span class="txt">483</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-comment"></i>
+                        <span class="txt">48</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-price"></i>
+                        <span class="txt">$2,740</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row-btn btn-rights">
+                  <a href="javascript:;" class="btn-gray">SUCCESS</a>
+                </div>
+              </div>
+              <span class="article-title">
+                <a href="admin-user-opportunity-detail.html">Tennessee River Cleanup</a>
+              </span>
+              <p class="article-content">
+                We need volunteers to help clean up the banks of the Tennessee River.
+              </p>
+              <div class="detail-dvent">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-map"></i>
+                      <span class="txt">North Charleston, SC, 30318</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-time"></i>
+                      <span class="txt">Jan 18,  2016 at 2:00 PM</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- .detail-dvent -->
+            </div>
+            <div class="show-content hide">
+              <div class="tables">
+                <div class="col col-left">
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Opportunity Status</h2>
+                    <div class="opp-status-week">
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Being Searched</span>
+                          <span class="value">684</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart being-searched-chart" id="being-searched-chart2">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Volunteers</span>
+                          <span class="value">38</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart volunteers-chart" id="volunteers-chart2">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Donation</span>
+                          <span class="value">$13,820</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart donation-chart" id="donation-chart2">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                    </div>
+                    <!--end .opp-status-week -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+                </div>
+                <!-- .col-left -->
+                <div class="col col-right">
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Fundraising Goal</h2>
+                    <div class="fundraising-goal">
+                      <div class="lefts pull-left">
+                        <span class="txt">$13,820 / $10,000</span>
+                      </div>
+                      <div class="rights pull-right">
+                        <span class="blue-bar pull-left"></span>
+                        <span class="txt pull-left">110%</span>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <!--end .fundraising-goal -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Total Volunteers Stats</h2>
+                    <div class="my-friends">
+                      <ul class="clearfix">
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <a href="javascript:;" class="check-circle"></a>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round dark-blue">AK</div></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round dark-blue">RB</div></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round light-blue">+27</div></a>
+                        </li>
+                      </ul>
+                      <!-- end ul -->
+                      <div class="my-profile-panel-footer">
+                        <p class="gray-txt">5 mutual friends / 38 members</p>
+                      </div>
+                      <!-- end .my-profile-panel-footer -->
+                    </div>
+                    <!--end .my-firends -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+
+                </div>
+                <!-- .col-right -->
+              </div>
+              <!-- .tables -->
+            </div>
+            <!-- .show-content -->
+            <a href="javascript:;" class="btn-gray-bar btn-gray-show"><i class="icons icons-admin icon-arrow"></i><span class="txt">Show Report Summary</span></a>
+            <a href="javascript:;" class="btn-gray-bar btn-gray-hide hide"><i class="icons icons-admin icon-arrow"></i><span class="txt">Hide Report Summary</span></a>
+            <!-- .btn-gray-bar -->
+          </div>
+          <!-- end .list-item -->
+          
+          <div class="list-item">
+            <a href="admin-user-opportunity-detail.html" class="photo-link">
+              <img src="i/admin-user/photo-400x400-8.jpg" alt="photo" class="photo">
+            </a>
+            <div class="content">
+              <div class="top">
+                <div class="icon-dvent data">
+                  <ul>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-user"></i>
+                        <span class="txt">132</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-link"></i>
+                        <span class="txt">302</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-praise"></i>
+                        <span class="txt">483</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-comment"></i>
+                        <span class="txt">48</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-price"></i>
+                        <span class="txt">$2,740</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row-btn btn-rights">
+                  <a href="javascript:;" class="btn-gray">SUCCESS</a>
+                </div>
+              </div>
+              <span class="article-title">
+                <a href="admin-user-opportunity-detail.html">Greenhouse Rehab and Compost Management</a>
+              </span>
+              <p class="article-content">
+                Volunteers are needed for 3 hour shifts to help with structural rehab for several of our greenhouses,
+                 as well as compost area upkeep and management.
+              </p>
+              <div class="detail-dvent">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-map"></i>
+                      <span class="txt">North Charleston, SC, 29405</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-time"></i>
+                      <span class="txt">Jan 31, 2017 at 5:00 PM</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- .detail-dvent -->
+            </div>
+            <div class="show-content hide">
+              <div class="tables">
+                <div class="col col-left">
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Opportunity Status</h2>
+                    <div class="opp-status-week">
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Being Searched</span>
+                          <span class="value">684</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart being-searched-chart" id="being-searched-chart3">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Volunteers</span>
+                          <span class="value">38</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart volunteers-chart" id="volunteers-chart3">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Donation</span>
+                          <span class="value">$13,820</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart donation-chart" id="donation-chart3">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                    </div>
+                    <!--end .opp-status-week -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+                </div>
+                <!-- .col-left -->
+                <div class="col col-right">
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Fundraising Goal</h2>
+                    <div class="fundraising-goal">
+                      <div class="lefts pull-left">
+                        <span class="txt">$13,820 / $10,000</span>
+                      </div>
+                      <div class="rights pull-right">
+                        <span class="blue-bar pull-left"></span>
+                        <span class="txt pull-left">110%</span>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <!--end .fundraising-goal -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Total Volunteers Stats</h2>
+                    <div class="my-friends">
+                      <ul class="clearfix">
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <a href="javascript:;" class="check-circle"></a>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round dark-blue">AK</div></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round dark-blue">RB</div></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round light-blue">+27</div></a>
+                        </li>
+                      </ul>
+                      <!-- end ul -->
+                      <div class="my-profile-panel-footer">
+                        <p class="gray-txt">5 mutual friends / 38 members</p>
+                      </div>
+                      <!-- end .my-profile-panel-footer -->
+                    </div>
+                    <!--end .my-firends -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+
+                </div>
+                <!-- .col-right -->
+              </div>
+              <!-- .tables -->
+            </div>
+            <!-- .show-content -->
+            <a href="javascript:;" class="btn-gray-bar btn-gray-show"><i class="icons icons-admin icon-arrow"></i><span class="txt">Show Report Summary</span></a>
+            <a href="javascript:;" class="btn-gray-bar btn-gray-hide hide"><i class="icons icons-admin icon-arrow"></i><span class="txt">Hide Report Summary</span></a>
+            <!-- .btn-gray-bar -->
+          </div>
+          <!-- end .list-item -->
+        </div>
+      </div>
+      <!-- end .list-column -->
+    </div>
+    <!-- end .tab-container-expired -->
+
+    <div class="tab-content-area container-data tab-container-pending hide">
+      <div class="filter-box">
+        <div class="form-area">
+          <div class="row-search">
+            <a href="admin-user-search-result.html" class="btn-search pull-right">Search</a>
+            <div class="main-box">
+              <div class="dropdown dropdown-default pull-right">
+                <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <span class="value selected-option">All Interest Categories</span>
+                  <span class="icons icon-tag"></span>
+                  <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="javascript:;">All Interest Categories</a></li>
+                  <li><a href="javascript:;">Adult education</a></li>
+                  <li><a href="javascript:;">Animals</a></li>
+                  <li><a href="javascript:;">Arts and culture</a></li>
+                  <li><a href="javascript:;">Children and youth education</a></li>
+                  <li><a href="javascript:;">Civic and community</a></li>
+                  <li><a href="javascript:;">Disaster and emergency services</a></li>
+                  <li><a href="javascript:;">Environment</a></li>
+                  <li><a href="javascript:;">Faith-based service</a></li>
+                  <li><a href="javascript:;">Family services</a></li>
+                  <li><a href="javascript:;">Health and wellness</a></li>
+                  <li><a href="javascript:;">Hunger and homelessness</a></li>
+                  <li><a href="javascript:;">Immigrant and refugee services</a></li>
+                  <li><a href="javascript:;">International service</a></li>
+                  <li><a href="javascript:;">Internships and employment</a></li>
+                  <li><a href="javascript:;">Justice and legal services</a></li>
+                  <li><a href="javascript:;">Schools</a></li>
+                  <li><a href="javascript:;">Senior services</a></li>
+                  <li><a href="javascript:;">Sports and recreation</a></li>
+                  <li><a href="javascript:;">Technology</a></li>
+                  <li><a href="javascript:;">Veterans and military families</a></li>
+                </ul>
+              </div>
+              <!-- end .dropdown -->
+              <span class="inputs"><i class="icons icon-search"></i><input type="search" placeholder="Search Your Opportunities" ></span>
+            </div>
+            <!-- end .main-box -->
+          </div>
+          <!-- end .row-search -->
+          <div class="row-filter hide">
+            <div class="col-calendar">
+              <span class="inputs calendar">
+                <input name="from-date" type="text" class="from-date" placeholder="From Date" readonly>
+                <a href="javascript:;" class="icons icon-calendar date-icon"></a>
+              </span>
+            </div>
+            <div class="col-calendar">
+              <span class="inputs calendar">
+                <input name="to-date" type="text" class="to-date" placeholder="To Date" readonly>
+                <a href="javascript:;" class="icons icon-calendar to-date-icon"></a>
+              </span>
+            </div>
+            <div class="col-dropdown">
+              <div class="dropdown dropdown-default">
+                <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <span class="value selected-option">Participate in this National Events</span>
+                  <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="javascript:;">Participate in this National Events1</a></li>
+                  <li><a href="javascript:;">Participate in this National Events2</a></li>
+                </ul>
+              </div>
+              <!-- end .dropdown -->
+            </div>
+          </div>
+          <!-- end .row-filter -->
+          <div class="row-btn">
+            <a href="javascript:;" class="link-more">+ More Options</a>
+            <a href="javascript:;" class="link-less hide">- Less Options</a>
+          </div>
+          <!-- end .row-btn -->
+        </div>
+        <!-- end .form-area -->
+      </div>
+      <!-- end .filter-box -->
+
+      <div class="list list-column">
+        <div class="title-bar">
+          <h3 class="rights pull-right">
+            <a href="javascript:;" class="link-icon-down"><i class="icons icon-chevron-down"></i><span class="txt">Filters</span></a>
+          </h3>
+          <h2 class="container-titles">Your Pending Opportunities</h2>
+        </div>
+        <div class="container-fluid">
+          <div class="list-item">
+            <a href="admin-user-opportunity-detail.html" class="photo-link">
+              <img src="i/admin-user/photo-250x170-1.jpg" alt="photo" class="photo">
+            </a>
+            <div class="content">
+              <div class="top">
+                <div class="icon-dvent data">
+                  <ul>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-user"></i>
+                        <span class="txt">132</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-link"></i>
+                        <span class="txt">302</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-praise"></i>
+                        <span class="txt">483</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-comment"></i>
+                        <span class="txt">48</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-price"></i>
+                        <span class="txt">$2,740</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row-btn btn-rights">
+                  <a href="javascript:;" class="btn-gray">SUCCESS</a>
+                </div>
+              </div>
+              <span class="article-title">
+                <a href="admin-user-opportunity-detail.html">Farming for Kids</a>
+              </span>
+              <p class="article-content">
+                Educate our children to learn about nature and get closer to their surrounding
+              </p>
+              <div class="detail-dvent">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-map"></i>
+                      <span class="txt">North Charleston, SC, 30318</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-time"></i>
+                      <span class="txt">Jan 18,  2016 at 2:00 PM</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- .detail-dvent -->
+            </div>
+            <div class="show-content hide">
+              <div class="tables">
+                <div class="col col-left">
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Opportunity Status</h2>
+                    <div class="opp-status-week">
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Being Searched</span>
+                          <span class="value">684</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart being-searched-chart" id="being-searched-chart4">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Volunteers</span>
+                          <span class="value">38</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart volunteers-chart" id="volunteers-chart4">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Donation</span>
+                          <span class="value">$13,820</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart donation-chart" id="donation-chart4">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                    </div>
+                    <!--end .opp-status-week -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+                </div>
+                <!-- .col-left -->
+                <div class="col col-right">
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Fundraising Goal</h2>
+                    <div class="fundraising-goal">
+                      <div class="lefts pull-left">
+                        <span class="txt">$13,820 / $10,000</span>
+                      </div>
+                      <div class="rights pull-right">
+                        <span class="blue-bar pull-left"></span>
+                        <span class="txt pull-left">110%</span>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <!--end .fundraising-goal -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Total Volunteers Stats</h2>
+                    <div class="my-friends">
+                      <ul class="clearfix">
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <a href="javascript:;" class="check-circle"></a>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round dark-blue">AK</div></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round dark-blue">RB</div></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round light-blue">+27</div></a>
+                        </li>
+                      </ul>
+                      <!-- end ul -->
+                      <div class="my-profile-panel-footer">
+                        <p class="gray-txt">5 mutual friends / 38 members</p>
+                      </div>
+                      <!-- end .my-profile-panel-footer -->
+                    </div>
+                    <!--end .my-firends -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+
+                </div>
+                <!-- .col-right -->
+              </div>
+              <!-- .tables -->
+            </div>
+            <!-- .show-content -->
+            <a href="javascript:;" class="btn-gray-bar btn-gray-show"><i class="icons icons-admin icon-arrow"></i><span class="txt">Show Report Summary</span></a>
+            <a href="javascript:;" class="btn-gray-bar btn-gray-hide hide"><i class="icons icons-admin icon-arrow"></i><span class="txt">Hide Report Summary</span></a>
+            <!-- .btn-gray-bar -->
+          </div>
+          <!-- end .list-item -->
+
+          <div class="list-item">
+            <a href="admin-user-opportunity-detail.html" class="photo-link">
+              <img src="i/admin-user/photo-250x170-2.jpg" alt="photo" class="photo">
+            </a>
+            <div class="content">
+              <div class="top">
+                <div class="icon-dvent data">
+                  <ul>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-user"></i>
+                        <span class="txt">132</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-link"></i>
+                        <span class="txt">302</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-praise"></i>
+                        <span class="txt">483</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-comment"></i>
+                        <span class="txt">48</span>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="icon-txt">
+                        <i class="icons icon-price"></i>
+                        <span class="txt">$2,740</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="row-btn btn-rights">
+                  <a href="javascript:;" class="btn-gray">SUCCESS</a>
+                </div>
+              </div>
+              <span class="article-title">
+                <a href="admin-user-opportunity-detail.html">Tennessee River Cleanup</a>
+              </span>
+              <p class="article-content">
+                We need volunteers to help clean up the banks of the Tennessee River.
+              </p>
+              <div class="detail-dvent">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-map"></i>
+                      <span class="txt">North Charleston, SC, 30318</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-time"></i>
+                      <span class="txt">Jan 18,  2016 at 2:00 PM</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <!-- .detail-dvent -->
+            </div>
+            <div class="show-content hide">
+              <div class="tables">
+                <div class="col col-left">
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Opportunity Status</h2>
+                    <div class="opp-status-week">
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Being Searched</span>
+                          <span class="value">684</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart being-searched-chart" id="being-searched-chart5">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Volunteers</span>
+                          <span class="value">38</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart volunteers-chart" id="volunteers-chart5">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                      <div class="row">
+                        <div class="lefts">
+                          <span class="txt">Donation</span>
+                          <span class="value">$13,820</span>
+                        </div>
+                        <!--end .lefts -->
+                        <div class="rights">
+                          <div class="chart donation-chart" id="donation-chart5">
+                          </div>
+                        </div>
+                        <!--end .rights -->
+                        <div class="clearfix"></div>
+                      </div>
+                      <!--end .row -->
+                    </div>
+                    <!--end .opp-status-week -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+                </div>
+                <!-- .col-left -->
+                <div class="col col-right">
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Fundraising Goal</h2>
+                    <div class="fundraising-goal">
+                      <div class="lefts pull-left">
+                        <span class="txt">$13,820 / $10,000</span>
+                      </div>
+                      <div class="rights pull-right">
+                        <span class="blue-bar pull-left"></span>
+                        <span class="txt pull-left">110%</span>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <!--end .fundraising-goal -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+
+                  <div class="my-profile-panel">
+                    <h2 class="right-panel-titles">Total Volunteers Stats</h2>
+                    <div class="my-friends">
+                      <ul class="clearfix">
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <a href="javascript:;" class="check-circle"></a>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"/></a>
+                          <span class="check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round dark-blue">AK</div></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round dark-blue">RB</div></a>
+                          <span class="active check-circle"></span>
+                        </li>
+                        <li>
+                          <a href="javascript:;"><div class="round light-blue">+27</div></a>
+                        </li>
+                      </ul>
+                      <!-- end ul -->
+                      <div class="my-profile-panel-footer">
+                        <p class="gray-txt">5 mutual friends / 38 members</p>
+                      </div>
+                      <!-- end .my-profile-panel-footer -->
+                    </div>
+                    <!--end .my-firends -->
+                  </div>
+                  <!-- end .my-profile-panel -->
+
+                </div>
+                <!-- .col-right -->
+              </div>
+              <!-- .tables -->
+            </div>
+            <!-- .show-content -->
+            <a href="javascript:;" class="btn-gray-bar btn-gray-show"><i class="icons icons-admin icon-arrow"></i><span class="txt">Show Report Summary</span></a>
+            <a href="javascript:;" class="btn-gray-bar btn-gray-hide hide"><i class="icons icons-admin icon-arrow"></i><span class="txt">Hide Report Summary</span></a>
+            <!-- .btn-gray-bar -->
+          </div>
+          <!-- end .list-item -->
+        </div>
+      </div>
+      <!-- end .list-column -->
+    </div>
+    <!-- end .tab-container-pending -->
+
+    <div class="clearfix"></div>
+  </div>
+  <!-- end .fluid-box -->
+</main>
+<!-- end .admin-dashboard-main -->
+
+<footer class="footer">
+  <div class="mains">
+    <h2 class="titles">POINTS OF LIGHT</h2>
+    <p class="text">Points of Light is the largest organization in the world dedicated to volunteer service.</p>
+    <nav class="link-group clearfix pull-left">
+      <ul>
+        <li><a href="javascript:;">About Us</a>|</li>
+        <li><a href="javascript:;">FAQ</a>|</li>
+        <li><a href="javascript:;">Partners</a>|</li>
+        <li><a href="javascript:;">Privacy Policy</a>|</li>
+        <li><a href="javascript:;">Terms of Service</a>|</li>
+        <li><a href="javascript:;">Media</a></li>
+      </ul>
+    </nav>
+    <div class="copyright pull-right">&copy; 2016 Points of Light</div>
+  </div>
+</footer>
+<!-- end .footer -->
+</body>
+</html>

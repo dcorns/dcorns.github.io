@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Tags -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no">
+  <title>Admin User Opportunity Detail</title>
+
+  <!-- font -->
+  <link href="css/font.css" rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+  <!-- Main CSS -->
+  <link href="css/jquery.ui.css" rel="stylesheet" />
+  <link href="css/jqtransform.css" rel="stylesheet" />
+  <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" />
+  <link href="css/screen.css" rel="stylesheet" />
+  <link href="css/admin.css" rel="stylesheet" />
+
+  <!-- jQuery library -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="js/jquery.jqtransform.js"></script>
+  <script src="js/ichart.1.2.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="js/script.js"></script>
+</head>
+<body>
+<div class="logged admin-logged">
+  <div class="nav-part">
+    <nav class="nav pull-left">
+      <ul>
+        <li class="current"><a href="admin-user-dashboard.html">Dashboard</a></li>
+        <li><a href="javascript:;">My Profile</a></li>
+        <li><a href="javascript:;">Manage My Account</a></li>
+      </ul>
+    </nav>
+    <span class="pull-right">
+      <a href="login.html" class="links">Logout</a>
+    </span>
+  </div>
+  <!-- end .nav-part -->
+  <header class="header">
+    <a class="logo" href="javascript:;"></a>
+    <nav class="nav">
+      <ul>
+        <li><a href="admin-user-dashboard.html">Home</a></li>
+        <li><a href="admin-user-browse-opportunities.html">Browse Opportunities</a></li>
+        <li><a href="admin-user-organization-profile.html">Browse Non Profits</a></li>
+        <li><a href="javascript:;">Blog</a></li>
+        <li><a href="javascript:;">About Us</a></li>
+      </ul>
+    </nav>
+    <div class="pull-right">
+      <a href="javascript:;" class="user-name">
+        <span class="name-txt">Germaine Jenkins</span>
+        <img class="person" src="i/admin-user/header-people-50x50.jpg" alt="person">
+        <span class="icons icon-down icons-admin"></span>
+      </a>
+    </div>
+  </header>
+  <!-- end .header -->
+
+  <div class="crumbs">
+    <div class="lefts pull-left">
+      <a href="admin-user-dashboard.html" class="links">Dahsboard</a>
+      <i class="icons icon-right-arrow"></i>
+      <span class="value-txt">Opportunity Details</span>
+    </div>
+    <!-- end .lefts -->
+    <div class="rights pull-right">
+      <a href="javascript:;" class="icons btn-icon-search"></a>
+    </div>
+    <!-- end .rights -->
+  </div>
+  <!-- end .crumbs -->
+
+  <div class="filter-box hide">
+    <h2 class="title-h2">Search and Share Ways to Do Good</h2>
+    <div class="form-area">
+      <div class="row-search">
+        <a href="admin-user-search-result.html" class="btn-search pull-right">Search</a>
+        <div class="main-box">
+          <div class="dropdown dropdown-default pull-right">
+            <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="value selected-option">All Interest Categories</span>
+              <span class="icons icon-tag"></span>
+              <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">All Interest Categories</a></li>
+              <li><a href="javascript:;">Adult education</a></li>
+              <li><a href="javascript:;">Animals</a></li>
+              <li><a href="javascript:;">Arts and culture</a></li>
+              <li><a href="javascript:;">Children and youth education</a></li>
+              <li><a href="javascript:;">Civic and community</a></li>
+              <li><a href="javascript:;">Disaster and emergency services</a></li>
+              <li><a href="javascript:;">Environment</a></li>
+              <li><a href="javascript:;">Faith-based service</a></li>
+              <li><a href="javascript:;">Family services</a></li>
+              <li><a href="javascript:;">Health and wellness</a></li>
+              <li><a href="javascript:;">Hunger and homelessness</a></li>
+              <li><a href="javascript:;">Immigrant and refugee services</a></li>
+              <li><a href="javascript:;">International service</a></li>
+              <li><a href="javascript:;">Internships and employment</a></li>
+              <li><a href="javascript:;">Justice and legal services</a></li>
+              <li><a href="javascript:;">Schools</a></li>
+              <li><a href="javascript:;">Senior services</a></li>
+              <li><a href="javascript:;">Sports and recreation</a></li>
+              <li><a href="javascript:;">Technology</a></li>
+              <li><a href="javascript:;">Veterans and military families</a></li>
+            </ul>
+          </div>
+          <!-- end .dropdown -->
+          <span class="inputs"><i class="icons icon-search"></i><input type="search" placeholder="Search Opportunities, Group, Cities, etc" ></span>
+        </div>
+        <!-- end .main-box -->
+      </div>
+      <!-- end .row-search -->
+      <div class="row-filter hide">
+        <div class="col-calendar">
+          <span class="inputs calendar">
+            <input name="from-date" type="text" class="from-date" placeholder="From Date" readonly>
+            <a href="javascript:;" class="icons icon-calendar date-icon"></a>
+          </span>
+        </div>
+        <div class="col-calendar">
+          <span class="inputs calendar">
+            <input name="to-date" type="text" class="to-date" placeholder="To Date" readonly>
+            <a href="javascript:;" class="icons icon-calendar to-date-icon"></a>
+          </span>
+        </div>
+        <div class="col-dropdown">
+          <div class="dropdown dropdown-default">
+            <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="value selected-option">Participate in this National Events</span>
+              <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Participate in this National Events1</a></li>
+              <li><a href="javascript:;">Participate in this National Events2</a></li>
+            </ul>
+          </div>
+          <!-- end .dropdown -->
+        </div>
+      </div>
+      <!-- end .row-filter -->
+      <div class="row-btn">
+        <a href="javascript:;" class="link-more">+ More Options</a>
+        <a href="javascript:;" class="link-less hide">- Less Options</a>
+      </div>
+      <!-- end .row-btn -->
+    </div>
+    <!-- end .form-area -->
+  </div>
+  <!-- end .filter-box -->
+  <div class="banner-container height419">
+    <div class="banner-box">
+      <div class="banner-img banner-img-opportunity"></div>
+      <a href="javascript:;" class="btn-edit-banner"><i class="icons icons-admin icon-edit"></i><span class="txt">Edit Opportunity</span></a>
+      <div class="infos">
+        <h2 class="title-h2">
+          Greenhouse Rehab and Compost Management
+        </h2>
+        <p class="txt-p">
+          Volunteers are needed for 3 hour shifts to help with structural rehab for several of our greenhouses,
+           as well as compost area upkeep and management.
+        </p>
+      </div>
+      <!-- end .infos -->
+      <div class="icon-dvent">
+        <ul>
+          <li>
+            <span class="icon-txt">
+              <i class="icons icon-user"></i>
+              <span class="txt">132</span>
+            </span>
+          </li>
+          <li>
+            <span class="icon-txt">
+              <i class="icons icon-link"></i>
+              <span class="txt">302</span>
+            </span>
+          </li>
+          <li>
+            <span class="icon-txt">
+              <i class="icons icon-praise"></i>
+              <span class="txt">483</span>
+            </span>
+          </li>
+          <li>
+            <span class="icon-txt">
+              <i class="icons icon-comment"></i>
+              <span class="txt">48</span>
+            </span>
+          </li>
+          <li>
+            <span class="icon-txt">
+              <i class="icons icon-price"></i>
+              <span class="txt">$2,740</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <!-- end .icon-dvent -->
+    </div>
+    <!-- end .banner-box -->
+  </div>
+  <!-- end .banner-container -->
+</div>
+<!-- end .logged -->
+
+<main class="main admin-opportunity-detail-main admin-main">
+  <div class="fluid-box">
+    <aside class="right-aside pull-right">
+      <div class="opportunity-share">
+        <span class="txt-share">Share on</span>
+        <a href="javascript:;" class="txt-f">f</a>
+        <a href="javascript:;" class="txt-t">t</a>
+        <a href="javascript:;" class="txt-g">g+</a>
+        <a href="javascript:;" class="txt-in">in</a>
+      </div>
+      <!--end .opportunity-share -->
+
+      <div class="white-pannel my-profile-panel">
+        <h2 class="right-panel-titles pull-left">Opportunity Status</h2>
+        <span class="txt-week pull-left left10">This Week</span>
+        <a href="javascript:;" class="icons icon-details"></a>
+        <div class="opp-status-week">
+          <div class="row">
+            <div class="lefts">
+              <span class="txt">Being Searched</span>
+              <span class="value">73</span>
+            </div>
+            <!--end .lefts -->
+            <div class="rights">
+              <div class="chart being-searched-chart" id="being-searched-chart0">
+              </div>
+            </div>
+            <!--end .rights -->
+            <div class="clearfix"></div>
+          </div>
+          <!--end .row -->
+          <div class="row">
+            <div class="lefts">
+              <span class="txt">Volunteers</span>
+              <span class="value">+ 17</span>
+            </div>
+            <!--end .lefts -->
+            <div class="rights">
+              <div class="chart volunteers-chart" id="volunteers-chart0">
+              </div>
+            </div>
+            <!--end .rights -->
+            <div class="clearfix"></div>
+          </div>
+          <!--end .row -->
+          <div class="row">
+            <div class="lefts">
+              <span class="txt">Donation</span>
+              <span class="value">+ $520</span>
+            </div>
+            <!--end .lefts -->
+            <div class="rights">
+              <div class="chart donation-chart" id="donation-chart0">
+              </div>
+            </div>
+            <!--end .rights -->
+            <div class="clearfix"></div>
+          </div>
+          <!--end .row -->
+        </div>
+        <!--end .opp-status-week -->
+      </div>
+      <!-- end .my-profile-panel -->
+
+      <div class="white-pannel direct-messages-panel">
+        <h2 class="right-panel-titles">Direct Messages</h2>
+        <a href="javascript:;" class="icons icon-details"></a>
+        <div class="main-box">
+          <span class="textareas">
+            <textarea placeholder="Write messages here..."></textarea>
+          </span>
+          <a href="#" data-toggle="modal" data-target="#modal-message-ok" class="btn-gray">Submit</a>
+        </div>
+        <!--end .main-box -->
+      </div>
+      <!--end .direct-messages-panel -->
+    </aside>
+    <!-- end .right-aside -->
+    <div class="container-data">
+      <div class="tab-head">
+        <nav class="nav-tab">
+          <ul>
+            <li class="active"><a href="javascript:;">Description</a></li>
+            <li><a href="javascript:;">Volunteers</a></li>
+            <li><a href="javascript:;">Discussion</a></li>
+            <li><a href="javascript:;">Messages</a></li>
+          </ul>
+        </nav>
+        <!-- end .nav-tab -->
+      </div>
+      <!-- end .tab-head -->
+      <div class="tab-container-box">
+        <div class="tab-content-area white-pannel tab-container-description">
+          <div class="tab-container-description">
+            <p class="paragraph">
+              Fresh Future Farm is a huge endeavor that intends to have a major impact on our community. 
+              We want you to be part of it, not just because we need you, but because if we build this together,
+              the results will be amazing. There are many ways to volunteer and to be part of Fresh Future Farm.
+              We can use help around the farm on Fridays and Saturdays and 3-hour shifts are available 
+              throughout the day. Greenhouse rehabilitation and compost management positions will require 
+              manual labor and shoes that you don’t mind getting dirty. Please bring your own work gloves 
+              if possible, the Farm has a small supply for those that do not. 
+              Rehab and upkeep normally involves general repairs, cleaning, compost rotation and mixing, 
+              and transporting compost with wheelbarrows to our beds and greenhouses. Volunteers must be 
+              at least 18 years of age or 15 with a parent’s signed permission.
+            </p>
+            <!-- end .paragraph -->
+            <div class="row-txt">
+              <h3 class="title">LOCATION :</h3>
+              <p class="txt-p">Fresh Future Farm, 2008 Success Street, North Charleston, SC,  29405</p>
+            </div>
+            <!-- end .row-txt -->
+            <div class="row-txt">
+              <h3 class="title">START - END DATE & TIME :</h3>
+              <p class="txt-p">Jan 10, 2017 at 3 : 50 PM - Jan 10, 2017 at 7 : 00 PM</p>
+            </div>
+            <!-- end .row-txt -->
+            <div class="row-txt">
+              <h3 class="title">PRIMARY ISSUE OF THIS VOLUNTEER OPPORTUNITY :</h3>
+              <p class="txt-p">Civic and Community, Environment</p>
+            </div>
+            <!-- end .row-txt -->
+            <div class="row-txt">
+              <h3 class="title">NUMBER OF VOLUNTEER NEEDED :</h3>
+              <p class="txt-p">5-10 people</p>
+            </div>
+            <!-- end .row-txt -->
+          </div>
+        </div>
+        <!-- end .tab-container-description -->
+
+        <div class="tab-content-area tab-container-volunteers hide">
+          <div class="search">
+            <span class="inputs">
+              <a  href="javascript:;" class="icons icon-search"></a>
+              <input type="search" placeholder="Search Attendees">
+            </span>
+          </div>
+          <!-- end .search -->
+          <div class="btn-box">
+            <a href="javascript:;" class="btn-green pull-right">Update User’s Attendece Status</a>
+            <a href="javascript:;" class="btn-send-email-to-selected-users pull-right">Send Email to Selected Users</a>
+          </div>
+          <!-- end .btn-box -->
+          <div class="groups-members-module">
+            <div class="row card-list">
+              <a href="javascript:;" class="card-item is-friend">
+                <div class="boxs  white-pannel clearfix">
+                  <span class="rihgt-top-text">Friend</span>
+                  <span class="card-left-img pull-left">
+                    <img src="i/admin-user/people-70x70-2.jpg" alt="photo" class="gray-border-circle-photo">
+                  </span>
+                  <div class="card-item-body little-card-body">
+                    <h4 class="titles">Rebecca Nice</h4>
+                    <p class="text detail-text">5 mutual friends</p>
+                  </div>
+                  <!-- end .card-item-body -->
+                </div>
+              </a>
+              <!--end .card-item-->
+              <a href="javascript:;" class="card-item is-friend">
+                <div class="boxs  white-pannel clearfix">
+                  <span class="rihgt-top-text hide">Friend</span>
+                  <span class="card-left-img pull-left">
+                    <img src="i/admin-user/people-70x70-1.jpg" alt="photo" class="gray-border-circle-photo">
+                  </span>
+                  <div class="card-item-body little-card-body">
+                    <h4 class="titles">John Doe</h4>
+                    <p class="text detail-text">10 mutual friends</p>
+                  </div>
+                  <!-- end .card-item-body -->
+                </div>
+              </a>
+              <!--end .card-item-->
+              <a href="javascript:;" class="card-item is-friend">
+                <div class="boxs  white-pannel clearfix">
+                  <span class="rihgt-top-text">Friend</span>
+                  <span class="card-left-img pull-left">
+                    <img src="i/admin-user/people-70x70-3.jpg" alt="photo" class="gray-border-circle-photo">
+                  </span>
+                  <div class="card-item-body little-card-body">
+                    <h4 class="titles">Jack Black</h4>
+                    <p class="text detail-text">5 mutual friends</p>
+                  </div>
+                  <!-- end .card-item-body -->
+                </div>
+              </a>
+              <!--end .card-item-->
+              <a href="javascript:;" class="card-item is-friend">
+                <div class="boxs  white-pannel clearfix">
+                  <span class="rihgt-top-text hide">Friend</span>
+                  <span class="card-left-img pull-left">
+                    <img src="i/admin-user/people-70x70-4.jpg" alt="photo" class="gray-border-circle-photo">
+                  </span>
+                  <div class="card-item-body little-card-body">
+                    <h4 class="titles">Regy Purba</h4>
+                    <p class="text detail-text">10 mutual friends</p>
+                  </div>
+                  <!-- end .card-item-body -->
+                </div>
+              </a>
+              <!--end .card-item-->
+              <a href="javascript:;" class="card-item is-friend">
+                <div class="boxs  white-pannel clearfix">
+                  <span class="rihgt-top-text hide">Friend</span>
+                  <span class="card-left-img pull-left">
+                    <img src="i/admin-user/people-70x70-6.jpg" alt="photo" class="gray-border-circle-photo">
+                  </span>
+                  <div class="card-item-body little-card-body">
+                    <h4 class="titles">Jacky Chan</h4>
+                    <p class="text detail-text">5 mutual friends</p>
+                  </div>
+                  <!-- end .card-item-body -->
+                </div>
+              </a>
+              <!--end .card-item-->
+              <a href="javascript:;" class="card-item is-friend">
+                <div class="boxs  white-pannel clearfix">
+                  <span class="rihgt-top-text">Friend</span>
+                  <span class="card-left-img pull-left">
+                    <img src="i/admin-user/people-70x70-5.jpg" alt="photo" class="gray-border-circle-photo">
+                  </span>
+                  <div class="card-item-body little-card-body">
+                    <h4 class="titles">Riska Merintol</h4>
+                    <p class="text detail-text">2 mutual friends</p>
+                  </div>
+                  <!-- end .card-item-body -->
+                </div>
+              </a>
+              <!--end .card-item-->
+              <a href="javascript:;" class="card-item is-friend">
+                <div class="boxs  white-pannel clearfix">
+                  <span class="rihgt-top-text">Friend</span>
+                  <span class="card-left-img pull-left">
+                    <img src="i/admin-user/people-70x70-2.jpg" alt="photo" class="gray-border-circle-photo">
+                  </span>
+                  <div class="card-item-body little-card-body">
+                    <h4 class="titles">Rebecca Nice</h4>
+                    <p class="text detail-text">5 mutual friends</p>
+                  </div>
+                  <!-- end .card-item-body -->
+                </div>
+              </a>
+              <!--end .card-item-->
+              <a href="javascript:;" class="card-item is-friend">
+                <div class="boxs  white-pannel clearfix">
+                  <span class="rihgt-top-text hide">Friend</span>
+                  <span class="card-left-img pull-left">
+                    <img src="i/admin-user/people-70x70-1.jpg" alt="photo" class="gray-border-circle-photo">
+                  </span>
+                  <div class="card-item-body little-card-body">
+                    <h4 class="titles">John Doe</h4>
+                    <p class="text detail-text">10 mutual friends</p>
+                  </div>
+                  <!-- end .card-item-body -->
+                </div>
+              </a>
+              <!--end .card-item-->
+              <a href="javascript:;" class="card-item is-friend">
+                <div class="boxs  white-pannel clearfix">
+                  <span class="rihgt-top-text">Friend</span>
+                  <span class="card-left-img pull-left">
+                    <img src="i/admin-user/people-70x70-3.jpg" alt="photo" class="gray-border-circle-photo">
+                  </span>
+                  <div class="card-item-body little-card-body">
+                    <h4 class="titles">Jack Black</h4>
+                    <p class="text detail-text">5 mutual friends</p>
+                  </div>
+                  <!-- end .card-item-body -->
+                </div>
+              </a>
+              <!--end .card-item-->
+              <a href="javascript:;" class="card-item is-friend">
+                <div class="boxs  white-pannel clearfix">
+                  <span class="rihgt-top-text hide">Friend</span>
+                  <span class="card-left-img pull-left">
+                    <img src="i/admin-user/people-70x70-4.jpg" alt="photo" class="gray-border-circle-photo">
+                  </span>
+                  <div class="card-item-body little-card-body">
+                    <h4 class="titles">Regy Purba</h4>
+                    <p class="text detail-text">10 mutual friends</p>
+                  </div>
+                  <!-- end .card-item-body -->
+                </div>
+              </a>
+              <!--end .card-item-->
+              <a href="javascript:;" class="card-item is-friend">
+                <div class="boxs  white-pannel clearfix">
+                  <span class="rihgt-top-text hide">Friend</span>
+                  <span class="card-left-img pull-left">
+                    <img src="i/admin-user/people-70x70-6.jpg" alt="photo" class="gray-border-circle-photo">
+                  </span>
+                  <div class="card-item-body little-card-body">
+                    <h4 class="titles">Jacky Chan</h4>
+                    <p class="text detail-text">5 mutual friends</p>
+                  </div>
+                  <!-- end .card-item-body -->
+                </div>
+              </a>
+              <!--end .card-item-->
+              <a href="javascript:;" class="card-item is-friend">
+                <div class="boxs  white-pannel clearfix">
+                  <span class="rihgt-top-text">Friend</span>
+                  <span class="card-left-img pull-left">
+                    <img src="i/admin-user/people-70x70-5.jpg" alt="photo" class="gray-border-circle-photo">
+                  </span>
+                  <div class="card-item-body little-card-body">
+                    <h4 class="titles">Riska Merintol</h4>
+                    <p class="text detail-text">2 mutual friends</p>
+                  </div>
+                  <!-- end .card-item-body -->
+                </div>
+              </a>
+              <!--end .card-item-->
+            </div>
+            <!--end .card-list-->
+            <div class="page-boxs">
+              <nav class="page-nav pull-right">
+                <ul>
+                  <li class="active"><a href="javascript:;">1</a></li>
+                  <li><a href="javascript:;">2</a></li>
+                  <li><a href="javascript:;">3</a></li>
+                  <li><a href="javascript:;">4</a></li>
+                  <li><a href="javascript:;">5</a></li>
+                  <li><a href="javascript:;">6</a></li>
+                  <li><a href="javascript:;">7</a></li>
+                  <li><a href="javascript:;">8</a></li>
+                  <li><a href="javascript:;">9</a></li>
+                </ul>
+              </nav>
+            </div>
+            <!--end .card-list-->
+          </div>
+          <!-- end .groups-members-module -->
+        </div>
+        <!-- end .tab-container-volunteers -->
+
+        <div class="tab-content-area tab-container-discussion hide">
+          <div class="comment-data">
+            <div class="discussions-module">
+              <div class="detail-content">
+                <div class="detail-content-article">
+                  <a href="javascript:;" class="title">Community Development and Volunteerism</a>
+                  <p class="txt-p bold">
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem ape-
+                    riam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.
+                  </p>
+                  <p class="txt-p">
+                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+                    numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+                  </p>
+                  <div class="message list-column">
+                    <ul class="left">
+                      <li class="txt-comments"><a href="javascript:;">4 comments</a></li>
+                      <li class="txt-like"><a href="javascript:;">21  Like</a></li>
+                      <li class="txt-dislike"><a href="javascript:;">4 Dislike</a></li>
+                      <li class="txt-share"><a href="javascript:;">17 Share</a></li>
+                    </ul>
+                    <div class="row-btn btn-rights">
+                      <a href="javascript:;" class="btn-gray-border btn-dislike">
+                        <i class="icons icon-dislike"></i>
+                        Dislike
+                      </a>
+                      <a href="javascript:;" class="btn-gray-border btn-like">
+                        <i class="icons icon-like"></i>
+                        Like
+                      </a>
+                      <a href="javascript:;" class="btn-gray-border btn-share">
+                        <i class="icons icon-share"></i>
+                        Share
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="write-post">
+                  <a href="javascript:;" class="photo-link">
+                    <img src="i/admin-user/people-50x50-1.jpg" alt="people" class="people">
+                  </a>
+                  <div class="form">
+                    <div class="inputs">
+                      <input class="write-post-input-box" type="text" placeholder="Write Post">
+                      <a href="javascript:;" class="icons icons-write"></a>
+                      <a href="javascript:;" class="icons icons-photo"></a>
+                      <a href="javascript:;" class="icons icons-brow"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="post-area hide">
+                  <div class="comment">
+                    <div class="comment-mian">
+                      <div class="comment-people">
+                        <div class="people">
+                          <a href="javascript:;" class="photo-link">
+                            <img src="i/admin-user/people-70x70-3.jpg" alt="people" class="img">
+                          </a>
+                          <span class="name">John Blake</span>
+                          <span class="time">24 Minutes ago</span>
+                        </div>
+                        <a href="javascript:;" class="icons icons-spot"></a>
+                      </div>
+                      <p class="txt-p">
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+                        numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+                      </p>
+                    </div>
+                    <div class="comment-reply hide">
+                      <div class="comment-reply-one">
+                        <a href="javascript:;" class="photo-link">
+                          <img src="i/admin-user/people-50x50-1.jpg" alt="people" class="reply-img">
+                        </a>
+                        <div class="reply-message clearfix">
+                          <p class="name">John Blake</p>
+                          <p class="content">Thanks <a href="javascript:;" class="blue">@all</a> and specially for <a href="javascript:;" class="blue">@rick</a> to accomplished the task.</p>
+                          <p class="time">1 Minutes ago</p>
+                        </div>
+                        <a href="javascript:;" class="reply">Reply</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comment-write">
+                    <a href="javascript:;" class="photo-link">
+                      <img src="i/admin-user/people-50x50-1.jpg" alt="user" class="user-img">
+                    </a>
+                    <div class="form">
+                      <div class="inputs">
+                        <input class="write-comment-input-box" type="text" placeholder="Comment">
+                        <a href="javascript:;" class="icons icons-brow"></a>
+                        <a href="javascript:;" class="icons icons-photo"></a>
+                        <span class="txt">Press enter to post</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="post-area">
+                  <div class="comment">
+                    <div class="comment-mian">
+                      <div class="comment-people">
+                        <div class="people">
+                          <a href="javascript:;" class="photo-link">
+                            <img src="i/admin-user/people-70x70-3.jpg" alt="people" class="img">
+                          </a>
+                          <span class="name">Jake Blake</span>
+                          <span class="time">24 Minutes ago</span>
+                        </div>
+                        <a href="javascript:;" class="icons icons-spot"></a>
+                      </div>
+                      <p class="txt-p">
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+                        numquam eius modi tempora incidunt ut labore et dolore magnam aliquam.
+                      </p>
+                    </div>
+                    <div class="comment-reply hide">
+                      <div class="comment-reply-one">
+                        <a href="javascript:;" class="photo-link">
+                          <img src="i/admin-user/people-50x50-1.jpg" alt="people" class="reply-img">
+                        </a>
+                        <div class="reply-message clearfix">
+                          <p class="name">John Blake</p>
+                          <p class="content">Thanks <a href="javascript:;" class="blue">@all</a> and specially for <a href="javascript:;" class="blue">@rick</a> to accomplished the task.</p>
+                          <p class="time">1 Minutes ago</p>
+                        </div>
+                        <a href="javascript:;" class="reply">Reply</a>
+                      </div>
+                    </div>
+                    <div class="comment-reply">
+                      <div class="comment-reply-one">
+                        <a href="javascript:;" class="photo-link">
+                          <img src="i/admin-user/people-44x42-2.jpg" alt="people" class="reply-img">
+                        </a>
+                        <div class="reply-message clearfix">
+                          <p class="name">Nico robin</p>
+                          <p class="content">Thanks <a href="javascript:;" class="blue">@all</a> and specially for <a href="javascript:;" class="blue">@rick</a> to accomplished the task.</p>
+                          <p class="time">24 Minutes ago</p>
+                        </div>
+                        <a href="javascript:;" class="reply">Reply</a>
+                      </div>
+                    </div>
+                    <div class="comment-reply">
+                      <div class="comment-reply-one">
+                        <a href="javascript:;" class="photo-link">
+                          <img src="i/admin-user/people-44x42-4.jpg" alt="people" class="reply-img">
+                        </a>
+                        <div class="reply-message clearfix">
+                          <p class="name">Mugiwara d. luffy</p>
+                          <p class="content">
+                            On the top menu bar, the text is purple and then changes to white when hovering.Let's change the text to white
+                            and then just change the purple to a lighter
+                          </p>
+                          <p class="time">24 Minutes ago</p>
+                        </div>
+                        <a href="javascript:;" class="reply">Reply</a>
+                      </div>
+                    </div>
+                    <div class="comment-reply">
+                      <div class="comment-reply-one">
+                        <a href="javascript:;" class="photo-link">
+                          <img src="i/admin-user/people-44x42-1.jpg" alt="reply-img" class="reply-img">
+                        </a>
+                        <div class="reply-message clearfix">
+                          <p class="name">Nico robin</p>
+                          <p class="content">Thanks <a href="javascript:;" class="blue">@all</a> and specially for <a href="javascript:;" class="blue">@rick</a> to accomplished.</p>
+                          <p class="time">24 Minutes ago</p>
+                        </div>
+                        <a href="javascript:;" class="reply">Reply</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comment-write">
+                    <a href="javascript:;" class="photo-link">
+                      <img src="i/admin-user/people-50x50-1.jpg" alt="user" class="user-img">
+                    </a>
+                    <div class="form">
+                      <div class="inputs">
+                        <input class="write-comment-input-box" type="text" placeholder="Comment">
+                        <a href="javascript:;" class="icons icons-brow"></a>
+                        <a href="javascript:;" class="icons icons-photo"></a>
+                        <span class="txt">Press enter to post</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- .detail-content -->
+            </div>
+          </div>
+        </div>
+        <!-- end .tab-container-discussion -->
+
+        <div class="tab-content-area tab-container-messages hide">
+
+        </div>
+        <!-- end .tab-container-messages -->
+      </div>
+      <!-- end .tab-container-box -->
+
+    </div>
+    <!-- end .container-data -->
+    <div class="clearfix"></div>
+  </div>
+  <!-- end .fluid-box -->
+
+</main>
+<!-- end .opportunity-detail-main -->
+
+<footer class="footer">
+  <div class="mains">
+    <h2 class="titles">POINTS OF LIGHT</h2>
+    <p class="text">Points of Light is the largest organization in the world dedicated to volunteer service.</p>
+    <nav class="link-group clearfix pull-left">
+      <ul>
+        <li><a href="javascript:;">About Us</a>|</li>
+        <li><a href="javascript:;">FAQ</a>|</li>
+        <li><a href="javascript:;">Partners</a>|</li>
+        <li><a href="javascript:;">Privacy Policy</a>|</li>
+        <li><a href="javascript:;">Terms of Service</a>|</li>
+        <li><a href="javascript:;">Media</a></li>
+      </ul>
+    </nav>
+    <div class="copyright pull-right">&copy; 2016 Points of Light</div>
+  </div>
+</footer>
+<!-- end .footer -->
+
+<div class="modal modal-default modal-message fade" id="modal-message-ok" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Direct Messages</h4>
+        <a href="#" class="btn-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a>
+      </div>
+      <!-- end .modal-header -->
+      <div class="modal-body">
+        <div class="txt-green">Message sent successfully!</div>
+      </div>
+      <!-- end .modal-body -->
+    </div>
+    <!-- .modal-content -->
+  </div>
+  <!-- .modal-dialog -->
+</div>
+<!-- #modal-message-ok-->
+</body>
+</html>

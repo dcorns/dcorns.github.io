@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Tags -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no">
+  <title>Admin User Browse Opportunities</title>
+
+  <!-- font -->
+  <link href="css/font.css" rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+  <!-- Main CSS -->
+  <link href="css/jquery.ui.css" rel="stylesheet" />
+  <link href="css/jqtransform.css" rel="stylesheet" />
+  <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" />
+  <link href="css/screen.css" rel="stylesheet" />
+  <link href="css/admin.css" rel="stylesheet" />
+
+  <!-- jQuery library -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="js/jquery.jqtransform.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="js/script.js"></script>
+</head>
+<body>
+<div class="logged admin-logged">
+  <div class="nav-part">
+    <nav class="nav pull-left">
+      <ul>
+        <li class="current"><a href="admin-user-dashboard.html">Dashboard</a></li>
+        <li><a href="javascript:;">My Profile</a></li>
+        <li><a href="javascript:;">Manage My Account</a></li>
+      </ul>
+    </nav>
+    <span class="pull-right">
+      <a href="login.html" class="links">Logout</a>
+    </span>
+  </div>
+  <!-- end .nav-part -->
+  <header class="header">
+    <a class="logo" href="javascript:;"></a>
+    <nav class="nav">
+      <ul>
+        <li><a href="admin-user-dashboard.html">Home</a></li>
+        <li class="current"><a href="admin-user-browse-opportunities.html">Browse Opportunities</a></li>
+        <li><a href="admin-user-organization-profile.html">Browse Non Profits</a></li>
+        <li><a href="javascript:;">Blog</a></li>
+        <li><a href="javascript:;">About Us</a></li>
+      </ul>
+    </nav>
+    <div class="pull-right">
+      <a href="javascript:;" class="user-name">
+        <span class="name-txt">Germaine Jenkins</span>
+        <img class="person" src="i/admin-user/header-people-50x50.jpg" alt="person">
+        <span class="icons icon-down icons-admin"></span>
+      </a>
+    </div>
+  </header>
+  <!-- end .header -->
+
+  <div class="crumbs">
+    <div class="lefts pull-left">
+      <span class="value-txt">Browse Opportunities</span>
+      <i class="icons icon-right-arrow"></i>
+    </div>
+    <!-- end .lefts -->
+    <div class="rights pull-right">
+      <a href="javascript:;" class="icons btn-icon-search"></a>
+    </div>
+    <!-- end .rights -->
+  </div>
+  <!-- end .crumbs -->
+
+  <div class="filter-box">
+    <h2 class="title-h2">Search and Share Ways to Do Good</h2>
+    <div class="form-area">
+      <div class="row-search">
+        <a href="admin-user-search-result.html" class="btn-search pull-right">Search</a>
+        <div class="main-box">
+          <div class="dropdown dropdown-default pull-right">
+            <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="value selected-option">All Interest Categories</span>
+              <span class="icons icon-tag"></span>
+              <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">All Interest Categories</a></li>
+              <li><a href="javascript:;">Adult education</a></li>
+              <li><a href="javascript:;">Animals</a></li>
+              <li><a href="javascript:;">Arts and culture</a></li>
+              <li><a href="javascript:;">Children and youth education</a></li>
+              <li><a href="javascript:;">Civic and community</a></li>
+              <li><a href="javascript:;">Disaster and emergency services</a></li>
+              <li><a href="javascript:;">Environment</a></li>
+              <li><a href="javascript:;">Faith-based service</a></li>
+              <li><a href="javascript:;">Family services</a></li>
+              <li><a href="javascript:;">Health and wellness</a></li>
+              <li><a href="javascript:;">Hunger and homelessness</a></li>
+              <li><a href="javascript:;">Immigrant and refugee services</a></li>
+              <li><a href="javascript:;">International service</a></li>
+              <li><a href="javascript:;">Internships and employment</a></li>
+              <li><a href="javascript:;">Justice and legal services</a></li>
+              <li><a href="javascript:;">Schools</a></li>
+              <li><a href="javascript:;">Senior services</a></li>
+              <li><a href="javascript:;">Sports and recreation</a></li>
+              <li><a href="javascript:;">Technology</a></li>
+              <li><a href="javascript:;">Veterans and military families</a></li>
+            </ul>
+          </div>
+          <!-- end .dropdown -->
+          <span class="inputs"><i class="icons icon-search"></i><input type="search" placeholder="Search Opportunities, Group, Cities, etc" ></span>
+        </div>
+        <!-- end .main-box -->
+      </div>
+      <!-- end .row-search -->
+      <div class="row-filter hide">
+        <div class="col-calendar">
+          <span class="inputs calendar">
+            <input name="from-date" type="text" class="from-date" placeholder="From Date" readonly>
+            <a href="javascript:;" class="icons icon-calendar date-icon"></a>
+          </span>
+        </div>
+        <div class="col-calendar">
+          <span class="inputs calendar">
+            <input name="to-date" type="text" class="to-date" placeholder="To Date" readonly>
+            <a href="javascript:;" class="icons icon-calendar to-date-icon"></a>
+          </span>
+        </div>
+        <div class="col-dropdown">
+          <div class="dropdown dropdown-default">
+            <a class="dropdown-txt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="value selected-option">Participate in this National Events</span>
+              <span class="icons fa fa-chevron-down" aria-hidden="true"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:;">Participate in this National Events1</a></li>
+              <li><a href="javascript:;">Participate in this National Events2</a></li>
+            </ul>
+          </div>
+          <!-- end .dropdown -->
+        </div>
+      </div>
+      <!-- end .row-filter -->
+      <div class="row-btn">
+        <a href="javascript:;" class="link-more">+ More Options</a>
+        <a href="javascript:;" class="link-less hide">- Less Options</a>
+      </div>
+      <!-- end .row-btn -->
+    </div>
+    <!-- end .form-area -->
+  </div>
+  <!-- end .filter-box -->
+</div>
+<!-- end .logged -->
+
+<main class="main home-main browse-opportunities-main admin-main">
+  <div class="page-right"></div>
+  <div class="list list-column">
+    <div class="title-bar">
+      <h3 class="number-text pull-right">Found 47 opportunities</h3>
+      <h2 class="container-titles">Results</h2>
+    </div>
+    <div class="container-fluid">
+      <div class="row white-pannel row-list-item">
+        <div class="list-item">
+          <a href="admin-user-opportunity-detail.html" class="photo-link">
+            <img src="i/admin-user/photo-250x240-1.jpg" alt="photo" class="photo">
+          </a>
+          <div class="content">
+            <div class="top">
+              <div class="icon-dvent data">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-user"></i>
+                      <span class="txt">132</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-link"></i>
+                      <span class="txt">302</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-praise"></i>
+                      <span class="txt">483</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-comment"></i>
+                      <span class="txt">48</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-price"></i>
+                      <span class="txt">$2,740</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="row-btn btn-rights">
+                <a href="javascript:;" class="btn-gray btn-your-opportunity pull-left">Your Opportunity</a>
+                <a href="javascript:;" class="icons icons-admin btn-icon-edit pull-left"></a>
+              </div>
+            </div>
+            <span class="article-title">
+              <a href="admin-user-opportunity-detail.html">5k Run & Walk support for SA Zoo's anniversary</a>
+            </span>
+            <p class="article-content">
+              Volunteers will support the 5k Run & Walk for the Zoo's Celebration by serving as course pointers, water station volunteers and
+              cheerleaders along the route.
+            </p>
+            <div class="detail-dvent">
+              <ul>
+                <li>
+                  <span class="icon-txt">
+                    <i class="icons icon-map"></i>
+                    <span class="txt">San Antonio, TX, 78209</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="icon-txt">
+                    <i class="icons icon-time"></i>
+                    <span class="txt">January 10,  2017 at 3:50 PM</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <!-- .detail-dvent -->
+            <div class="bottom-bar">
+              <div class="my-friends">
+                <ul class="friends-ul">
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-2.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-3.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-4.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><div class="round light-blue">+7</div></a>
+                  </li>
+                </ul>
+                <!-- end ul -->
+                <div class="my-profile-panel-footer">
+                  <span class="gray-text"> 10 Mutual Friends / 120 Volunteers</span>
+                </div>
+                <!--end .my-groups-footer-->
+              </div>
+              <!--end .my-badges-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end .row -->
+
+      <div class="row white-pannel row-list-item">
+        <div class="list-item">
+          <a href="admin-user-opportunity-detail.html" class="photo-link">
+            <span class="icons icon-tag">
+              <i class="icons icon-star"></i>
+            </span>
+            <img src="i/admin-user/photo-250x240-5.jpg" alt="photo" class="photo">
+          </a>
+          <div class="content">
+            <div class="top">
+              <div class="icon-dvent data">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-user"></i>
+                      <span class="txt">132</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-link"></i>
+                      <span class="txt">302</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-praise"></i>
+                      <span class="txt">483</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-comment"></i>
+                      <span class="txt">48</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-price"></i>
+                      <span class="txt">$2,740</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="row-btn btn-rights">
+                <a href="javascript:;" class="btn-green btn-learn-more pull-left join">Join Now</a>
+              </div>
+            </div>
+            <span class="article-title">
+              <a href="admin-user-opportunity-detail.html">Honoring Service at Hart Middle School</a>
+            </span>
+            <p class="article-content">
+              Join a team of volunteers who will work alongside their families to serve their community. Build picnic tables for an outdoor classroom,
+              set up rain barrels, plant flowering shrubs around the school building, organize school resource rooms, and participate in other ...
+            </p>
+            <div class="detail-dvent">
+              <ul>
+                <li>
+                  <span class="icon-txt">
+                    <i class="icons icon-map"></i>
+                    <span class="txt">Washington, DC, 20032</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="icon-txt">
+                    <i class="icons icon-time"></i>
+                    <span class="txt">May 2,  2017 at 1:00 PM</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <!-- .detail-dvent -->
+            <div class="bottom-bar">
+              <div class="my-friends">
+                <ul class="friends-ul">
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-2.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-3.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-4.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><div class="round light-blue">+7</div></a>
+                  </li>
+                </ul>
+                <!-- end ul -->
+                <div class="my-profile-panel-footer">
+                  <span class="gray-text">10 Mutual Friends / 73 Volunteers</span>
+                </div>
+                <!--end .my-groups-footer-->
+              </div>
+              <!--end .my-badges-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end .row -->
+
+      <div class="row white-pannel row-list-item">
+        <div class="list-item">
+          <a href="admin-user-opportunity-detail.html" class="photo-link">
+            <span class="icons icon-tag">
+              <i class="icons icon-star"></i>
+            </span>
+            <img src="i/admin-user/photo-250x240-6.jpg" alt="photo" class="photo">
+          </a>
+          <div class="content">
+            <div class="top">
+              <div class="icon-dvent data">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-user"></i>
+                      <span class="txt">132</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-link"></i>
+                      <span class="txt">302</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-praise"></i>
+                      <span class="txt">483</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-comment"></i>
+                      <span class="txt">48</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-price"></i>
+                      <span class="txt">$2,740</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="row-btn btn-rights">
+                <a href="javascript:;" class="btn-green btn-learn-more pull-left join">Join Now</a>
+              </div>
+            </div>
+            <span class="article-title">
+              <a href="admin-user-opportunity-detail.html">Playful Puppies and Cuddly Kittens</a>
+            </span>
+            <p class="article-content">
+              Our volunteers bring a little human companionship to the rescued animals at the Friends of Animals Foundation. Volunteers help walk
+              dogs, feed cats and socialize with the animals, bringing some positive energy to the shelter as the animals wait for a new home.
+            </p>
+            <div class="detail-dvent">
+              <ul>
+                <li>
+                  <span class="icon-txt">
+                    <i class="icons icon-map"></i>
+                    <span class="txt">Atlanta, GA, 20032</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="icon-txt">
+                    <i class="icons icon-time"></i>
+                    <span class="txt">January 2,  2017 at 1:00 PM</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <!-- .detail-dvent -->
+            <div class="bottom-bar">
+              <div class="my-friends">
+                <ul class="friends-ul">
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-2.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-3.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-4.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><div class="round light-blue">+7</div></a>
+                  </li>
+                </ul>
+                <!-- end ul -->
+                <div class="my-profile-panel-footer">
+                  <span class="gray-text">10 Mutual Friends / 73 Volunteers</span>
+                </div>
+                <!--end .my-groups-footer-->
+              </div>
+              <!--end .my-badges-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end .row -->
+
+      <div class="row white-pannel row-list-item">
+        <div class="list-item">
+          <a href="admin-user-opportunity-detail.html" class="photo-link">
+            <span class="icons icon-tag">
+              <i class="icons icon-star"></i>
+            </span>
+            <img src="i/admin-user/photo-250x240-7.jpg" alt="photo" class="photo">
+          </a>
+          <div class="content">
+            <div class="top">
+              <div class="icon-dvent data">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-user"></i>
+                      <span class="txt">132</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-link"></i>
+                      <span class="txt">302</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-praise"></i>
+                      <span class="txt">483</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-comment"></i>
+                      <span class="txt">48</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-price"></i>
+                      <span class="txt">$2,740</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="row-btn btn-rights">
+                <a href="javascript:;" class="btn-green btn-learn-more pull-left join">Join Now</a>
+              </div>
+            </div>
+            <span class="article-title">
+              <a href="admin-user-opportunity-detail.html">Quilts for the Homeless</a>
+            </span>
+            <p class="article-content">
+              Help us make quilts for distribution on cold nights to our city's homeless population. We will provide supplies and light snacks.
+            </p>
+            <div class="detail-dvent">
+              <ul>
+                <li>
+                  <span class="icon-txt">
+                    <i class="icons icon-map"></i>
+                    <span class="txt">Atlanta, GA, 20032</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="icon-txt">
+                    <i class="icons icon-time"></i>
+                    <span class="txt">March 24,  2017 at 1:00 PM</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <!-- .detail-dvent -->
+            <div class="bottom-bar">
+              <div class="my-friends">
+                <ul class="friends-ul">
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-2.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-3.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-4.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><div class="round light-blue">+7</div></a>
+                  </li>
+                </ul>
+                <!-- end ul -->
+                <div class="my-profile-panel-footer">
+                  <span class="gray-text">10 Mutual Friends / 73 Volunteers</span>
+                </div>
+                <!--end .my-groups-footer-->
+              </div>
+              <!--end .my-badges-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end .row -->
+
+      <div class="row white-pannel row-list-item">
+        <div class="list-item">
+          <a href="admin-user-opportunity-detail.html" class="photo-link">
+            <span class="icons icon-tag">
+              <i class="icons icon-star"></i>
+            </span>
+            <img src="i/admin-user/photo-250x240-2.jpg" alt="photo" class="photo">
+          </a>
+          <div class="content">
+            <div class="top">
+              <div class="icon-dvent data">
+                <ul>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-user"></i>
+                      <span class="txt">132</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-link"></i>
+                      <span class="txt">302</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-praise"></i>
+                      <span class="txt">483</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-comment"></i>
+                      <span class="txt">48</span>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-txt">
+                      <i class="icons icon-price"></i>
+                      <span class="txt">$2,740</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="row-btn btn-rights">
+                <a href="javascript:;" class="btn-green btn-learn-more pull-left join">Join Now</a>
+              </div>
+            </div>
+            <span class="article-title">
+              <a href="admin-user-opportunity-detail.html">Arts & Crafts with Kids</a>
+            </span>
+            <p class="article-content">
+              We need folks to help kids at the shelter with arts and crafts projects while their parents are in counseling sessions you can help!
+            </p>
+            <div class="detail-dvent">
+              <ul>
+                <li>
+                  <span class="icon-txt">
+                    <i class="icons icon-map"></i>
+                    <span class="txt">Riverside, CA, 20032</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="icon-txt">
+                    <i class="icons icon-time"></i>
+                    <span class="txt">April 2,  2017 at 1:00 PM</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <!-- .detail-dvent -->
+            <div class="bottom-bar">
+              <div class="my-friends">
+                <ul class="friends-ul">
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-2.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-3.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-4.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-1.jpg" alt="photo"></a>
+                    <span class="check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><img src="i/admin-user/people-44x42-gray.jpg" alt="photo"></a>
+                    <span class="active check-circle"></span>
+                  </li>
+                  <li>
+                    <a href="javascript:;"><div class="round light-blue">+7</div></a>
+                  </li>
+                </ul>
+                <!-- end ul -->
+                <div class="my-profile-panel-footer">
+                  <span class="gray-text">10 Mutual Friends / 73 Volunteers</span>
+                </div>
+                <!--end .my-groups-footer-->
+              </div>
+              <!--end .my-badges-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end .row -->
+
+      <div class="row-btn">
+        <a href="javascript:;" class="btn-gray-border btn-see-more">See more</a>
+      </div>
+      <!-- end .row-btn -->
+    </div>
+  </div>
+  <!-- end .list-column -->
+</main>
+<!-- end .browse-opportunities-main -->
+
+<footer class="footer">
+  <div class="mains">
+    <h2 class="titles">POINTS OF LIGHT</h2>
+    <p class="text">Points of Light is the largest organization in the world dedicated to volunteer service.</p>
+    <nav class="link-group clearfix pull-left">
+      <ul>
+        <li><a href="javascript:;">About Us</a>|</li>
+        <li><a href="javascript:;">FAQ</a>|</li>
+        <li><a href="javascript:;">Partners</a>|</li>
+        <li><a href="javascript:;">Privacy Policy</a>|</li>
+        <li><a href="javascript:;">Terms of Service</a>|</li>
+        <li><a href="javascript:;">Media</a></li>
+      </ul>
+    </nav>
+    <div class="copyright pull-right">&copy; 2016 Points of Light</div>
+  </div>
+</footer>
+<!-- end .footer -->
+</body>
+</html>
